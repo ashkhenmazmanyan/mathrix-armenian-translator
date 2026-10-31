@@ -1,0 +1,29 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Audio recordings (never commit)
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+*.webm
+recordings/
+
+# Model weights and caches (never commit)
+models/
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+*.onnx
+.cache/
+
+# Editors
+.vscode/
+.idea/
