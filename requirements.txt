@@ -3,3 +3,5 @@ torchaudio==2.8.0
 numpy
 soundcard
 faster-whisper
+transformers>=4.45,<5
+sentencepiece
