@@ -24,9 +24,14 @@ class Translator:
         sentences = split_sentences(text)
         batch = self.tok(sentences, return_tensors="pt", padding=True,
                          truncation=True, max_length=256).to("cuda")
+        # Guard against NLLB's repetition loops ("when you're with them, when you're with
+        # them, ..." x26 seen live): forbid repeating any 4-word sequence, and cap the output
+        # length relative to the input (English is rarely > 2x the Armenian token count).
+        max_new = min(200, 2 * batch["input_ids"].shape[1] + 10)
         with torch.inference_mode():
             ids = self.model.generate(**batch, forced_bos_token_id=self.english,
-                                      num_beams=self.beams, max_new_tokens=200)
+                                      num_beams=self.beams, max_new_tokens=max_new,
+                                      no_repeat_ngram_size=4)
         return " ".join(self.tok.batch_decode(ids, skip_special_tokens=True))
 
     def warmup(self):

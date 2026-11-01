@@ -21,8 +21,14 @@ def parse_args():
     p.add_argument("--mt-model", default="nllb-600M", choices=["nllb-600M", "nllb-1.3B"])
     p.add_argument("--min-silence", type=float, default=0.6,
                    help="seconds of silence that end a phrase (default 0.6)")
-    p.add_argument("--max-segment", type=float, default=10.0,
-                   help="longest phrase in seconds before it is cut (default 10)")
+    p.add_argument("--max-segment", type=float, default=8.0,
+                   help="longest phrase in seconds before it is cut (default 8; ASR time grows "
+                        "with length, 10 s phrases reached 4.0 s latency on one source)")
+    p.add_argument("--speaker-threshold", type=float, default=0.30,
+                   help="voice similarity needed to count as a known speaker (default 0.30; "
+                        "higher = more new speakers, lower = risk of merging people)")
+    p.add_argument("--no-speaker-split", action="store_true",
+                   help="don't split system-audio phrases where the voice changes")
     p.add_argument("--latency", action="store_true", help="show a latency breakdown under each line")
     p.add_argument("--download-models", action="store_true",
                    help="download the selected models (needs internet) and exit")
@@ -45,6 +51,9 @@ def main():
         from .translate import MT_MODELS
         print("ASR:", download_model(args.asr_model))
         print("MT: ", snapshot_download(MT_MODELS[args.mt_model]))
+        from .speakers import load_encoder, ECAPA_SAVEDIR
+        load_encoder("cpu")
+        print("Speaker:", ECAPA_SAVEDIR)
         return
 
     from .pipeline import run

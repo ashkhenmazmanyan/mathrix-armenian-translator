@@ -1,4 +1,6 @@
 """Armenian speech recognition with faster-whisper."""
+import re
+
 import numpy as np
 from faster_whisper import WhisperModel
 
@@ -15,7 +17,7 @@ class Transcriber:
             without_timestamps=True)
         # Drop parts Whisper itself considers non-speech (a common source of hallucinations).
         kept = [s for s in segments if not (s.no_speech_prob > 0.6 and s.avg_logprob < -1.0)]
-        return " ".join(s.text.strip() for s in kept).strip()
+        return remove_repeats(" ".join(s.text.strip() for s in kept).strip())
 
     def warmup(self):
         self.transcribe(np.zeros(16000, dtype=np.float32))
@@ -23,3 +25,14 @@ class Transcriber:
 
 def has_armenian(text):
     return any("԰" <= c <= "֏" for c in text)
+
+
+def remove_repeats(text):
+    """Drop a sentence that repeats the previous one: Whisper sometimes loops on music or
+    noise ("Հատ ուղոխել եմ։ Հատ ուղոխել եմ։ Հատ ուղոխել եմ։")."""
+    out = []
+    for sentence in re.split(r"(?<=[։:.!?])\s+", text):
+        key = re.sub(r"[^\w]", "", sentence.lower())
+        if sentence and (not out or key != re.sub(r"[^\w]", "", out[-1].lower())):
+            out.append(sentence)
+    return " ".join(out)
