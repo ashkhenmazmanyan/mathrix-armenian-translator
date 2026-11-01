@@ -1,0 +1,184 @@
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ python -m live_translate --no-mic --latency
+Loading models: ASR large-v3 (int8_float16), MT nllb-600M, speaker ECAPA (threshold 0.3) ...
+Listening: call side <- Monitor of P9
+Speak Armenian. Press Ctrl+C to stop.
+
+[00:00:00] Speaker 1
+HY: Մյուս կողմից շատ զույքեր խոսում են այն մասին, որ կենց հաղին մեջ սկսում են իրար այլ կերպ ճանաչել, այսինքն նույն իսկ եթե մինչև համոսնություն։
+EN: Many couples, on the other hand, talk about getting to know each other differently as soon as they get to know each other.
+    (latency 2.7s = silence wait 0.0 + queue 0.1 + asr 2.3 + speaker/mt 0.4; audio 10.0s; cut at max length)
+
+[00:00:10] Speaker 1
+HY: մարդիկց ույց տան իրենց բացասական կողմերը չխաղան այսպես ասեց, միև նույն է հա, կենց հաղավարությունը բերում է մի դիտանքում, որը դու մինչև այդ դրահնարավ
+EN: And that's the same thing, yeah, that's the kind of thinking that leads to a point of view that you've got so far.
+    (latency 2.9s = silence wait 0.0 + queue 0.1 + asr 2.5 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.86)
+
+[00:00:20] Speaker 1
+HY: պարզապես չէ սունեցել։ Ամեն տեպքում չի գալիս այն հարցը, որ ամուսնությունց հետո գալիս է մի բարջրջապուլ, որը պետք է հանցնել։
+EN: It's not just breastfeeding. It's not in every novel that the question arises that after marriage, there's a turmoil that you have to overcome.
+    (latency 3.1s = silence wait 0.6 + queue 0.1 + asr 2.1 + speaker/mt 0.3; audio 9.5s; voice match 0.84)
+
+[00:00:30] Speaker 1
+HY: ադապտացիոն շորջապոր։ Պրակծիկ մասով այո, բայց նախկան ամուսնությունը ամենիչ պարզ է, հավատացեք։ Մենք ուղակի չենք ուզում դա անդունել, որովհետև...
+EN: It's an adaptive shovel. In a nutshell, yes, but the previous marriage is the simplest, believe me. We don't want to talk about it because...
+    (latency 2.7s = silence wait 0.0 + queue 0.1 + asr 2.4 + speaker/mt 0.2; audio 10.0s; cut at max length; voice match 0.32)
+
+[00:00:40] Speaker 1
+HY: երբ որ անձի հետ գնում ես հյուր, երբ որ հայտնում ես իր միջավայրում, իր ընկերական միջավայրում, բակային, ընտանեկան միջավայրում։
+EN: When you're with someone, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them.
+    (latency 3.7s = silence wait 0.0 + queue 0.1 + asr 2.0 + speaker/mt 1.5; audio 10.0s; cut at max length; voice match 0.53)
+
+[00:00:50] Speaker 1
+HY: դու տեսնում ես, թե ինքը ինչպեսա դրսևորվում, ինչպեսա սնվում, ինչպեսա խոսում իր հարազատների հետ, ոնցա վերաբերվում, եթե դու իր հետ ժամանակ ես անցկասնում, դու տեսնում ես, թե ինքը ինչպեսա դրսևորվում, ին�
+EN: You see how he behaves, how he feeds, how he talks to his relatives, how he treats you, if you spend time with him, you see how he behaves.
+    (latency 3.6s = silence wait 0.0 + queue 0.1 + asr 3.2 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.70)
+
+[00:01:00] Speaker 1
+HY: ինքը ոնցա հերախոսով խոսում, այլ մարդկանց հետ ոնցա շպվում ինքը, ու ենպես ինչպես ինքը այլ մարդկանց է վերաբերվում, իրենց հետևից է խոսում, մի գուծ է չարախոսում։
+EN: He speaks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character.
+    (latency 4.0s = silence wait 0.0 + queue 0.1 + asr 2.7 + speaker/mt 1.2; audio 10.0s; cut at max length; voice match 0.74)
+
+[00:01:10] Speaker 1
+HY: Միգութսը չի գիտեմ։
+EN: I don't know Miguts.
+    (latency 1.0s = silence wait 0.0 + queue 0.1 + asr 0.7 + speaker/mt 0.1; audio 3.0s; cut at max length; split on voice change; voice match 0.52)
+
+[00:01:13] Speaker 1
+HY: Վատ խոսքեր է ոգտագործում, կամ անհարգալից է իր ծնողների հանդեպ, կամ անհարգալից է ինչ-որ մեկի հանդեպ փողոցում։
+EN: He is a drunkard, or he is disrespectful to his parents, or he is disrespectful to someone on the street.
+    (latency 3.1s = silence wait 0.0 + queue 1.0 + asr 1.8 + speaker/mt 0.2; audio 7.0s; cut at max length; split on voice change; voice match 0.81)
+
+[00:01:20] Speaker 1
+HY: կամայական վաղը դու ես հայտնվելու է դերում, երբ որ դու դարնաս սովորական իր համար։ Հետևաբար մենք գալիս ենք էլի արժեքներին, որ են ամենք էլի ամենք էլի ամենք էլի ամենք։
+EN: You're the one who's going to be in the role tomorrow, when you're the one who's going to be in the role for her. So we're coming up with values that are all of us, all of us, all of us.
+    (latency 3.0s = silence wait 0.0 + queue 0.1 + asr 2.6 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.82)
+
+[00:01:30] Speaker 1
+HY: ամեն ինչը, ինչը մարդ ունի իր ներսում, դա կարող ես թակցնել մեկ ամիս, երկու ամիս, չգիրտեմ, ինչ պիտի լինի, որ երեկ ամիս թակցնես, բայց...
+EN: Everything you have inside of you, you can put it away for a month, two months, I don't know what it would be like to put it away for a month, but...
+    (latency 2.6s = silence wait 0.0 + queue 0.1 + asr 2.2 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.85)
+
+[00:01:40] Speaker 1
+HY: Միչ որ իրավիճակներում մար տրսևորվում է, ու ակի որքանով ենք մենք պատրաստ տեսնելու դա, ընկալելու դա։
+EN: There's a lot of uncertainty in situations, and how much we're willing to see it, to perceive it.
+    (latency 1.9s = silence wait 0.0 + queue 0.1 + asr 1.6 + speaker/mt 0.2; audio 7.5s; cut at max length; split on voice change; voice match 0.78)
+
+[00:01:47] Speaker 2
+HY: Մինչ պիսին այնքը։
+EN: I'm going to go to the bathroom.
+    (latency 2.6s = silence wait 0.0 + queue 1.9 + asr 0.6 + speaker/mt 0.1; audio 2.5s; cut at max length; split on voice change; voice match 0.10)
+
+[00:01:50] Speaker 2
+HY: այն ինչ-որ դու պատկիրացնում ես, թե այն ինչ-որ իրարկանում կա, որովհետև գիտեք շատ գիչ դեպքերում մարդիկ կաղարանում են թակցնել իրենց։
+EN: It's something you own, or it's something that's messed up, because you know, in very rare cases, people start messing with themselves.
+    (latency 2.5s = silence wait 0.0 + queue 0.1 + asr 2.1 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.65)
+
+[00:02:00] Speaker 2
+HY: լավովատ գողմերը։ Բայց մի փոքր ուշադիր լինելու դևքում էտ ամենչը տեսանելի է։ Հետո անակնգալները շատ քիչ են լինելու։ Հակյանքը ձեզ անակնգալները կարող է բերել
+EN: The good old days. But if you're a little more careful, you can see everything in the mirror. And then there will be very few survivors. Life can bring you surprises
+    (latency 2.9s = silence wait 0.0 + queue 0.1 + asr 2.6 + speaker/mt 0.2; audio 10.0s; cut at max length; voice match 0.76)
+
+[00:02:10] Speaker 2
+HY: չկանխատեսված իրադարսությունների, առողջական, տարբեր իրավիճակները, բայց մարդու ով լինելը
+EN: unforeseen occurrences, health, different situations, but being a human being
+    (latency 2.4s = silence wait 0.6 + queue 0.1 + asr 1.5 + speaker/mt 0.2; audio 7.3s; voice match 0.82)
+
+[00:02:17] Speaker 2
+HY: աղր տեսանելի է չէ շպման մեջ։ Չես տեսնում, եթե չես ուզում տեսնել։ Եթե իսկզբան է, ստեղծել ես։
+EN: The salt is not visible in the mirror. You can't see if you don't want to see. If it's the first time, you've created it.
+    (latency 2.5s = silence wait 0.6 + queue 0.1 + asr 1.6 + speaker/mt 0.1; audio 7.2s; voice match 0.81)
+
+^C
+Stopping...
+
+Session: 17 lines, latency mean 2.8s, max 4.0s, over 5 s: 0; dropped segments: 0
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ python -m live_translate --no-mic --latency --no-speaker-split
+Loading models: ASR large-v3 (int8_float16), MT nllb-600M, speaker ECAPA (threshold 0.3) ...
+Listening: call side <- Monitor of P9
+Speak Armenian. Press Ctrl+C to stop.
+
+[00:00:01] Speaker 1
+HY: Շորջանից մյուս կողմից շատ զույքեր խոսում են այն մասին, որ կենց հաղին մեջ սկսում են իրար այլ կերպ ճանաչել։
+EN: On the other side of the coin, many couples talk about getting to know each other differently in the blink of an eye.
+    (latency 2.3s = silence wait 0.0 + queue 0.0 + asr 2.0 + speaker/mt 0.3; audio 10.0s; cut at max length)
+
+[00:00:11] Speaker 1
+HY: իսկ եթե մինչև ամուսնությունը մարդիկ ծույց տան իրենց բացասական գողմերը չխաղան այսպես ասեց, միև նույն է հա, կենց հաղավարությունը բերում է մի դիտանքում, որը դու։
+EN: And if before marriage, people don't laugh at their negative aspects, say, "Well, that's the same thing", then that's what the paradox is about in a view that you have.
+    (latency 3.1s = silence wait 0.0 + queue 0.0 + asr 2.7 + speaker/mt 0.4; audio 10.0s; cut at max length; voice match 0.84)
+
+[00:00:21] Speaker 1
+HY: ու մինչև այդ դրա հնարավորդյունը բարզապես չէ սունեցել։ Ամեն տեպքում չի գալիս այն հարցը, որ ամուսնությունությունց հետո գալիս է մի բարջրջապուլ, որը պետք է անցնել։
+EN: And until then, I haven't been able to breastfeed it. It is not always the case that after marriage comes a turning point that must be overcome.
+    (latency 2.9s = silence wait 0.0 + queue 0.0 + asr 2.7 + speaker/mt 0.2; audio 10.0s; cut at max length; voice match 0.87)
+
+[00:00:32] Speaker 1
+HY: ադապտացիոն շորջապոր։ Պրակտիկ մասով այո, բայց նախկան ամուսնությունը ամենիչ պարզ է, հավատացեք։ Մենք ուղակի չենք ուզում դա անդունել, որովհետև...
+EN: It's an adaptive shovel. Practically, yes, but the previous marriage is the simplest, believe me. We don't want to talk about it because...
+    (latency 2.6s = silence wait 0.0 + queue 0.0 + asr 2.4 + speaker/mt 0.2; audio 10.0s; cut at max length; voice match 0.32)
+
+[00:00:42] Speaker 1
+HY: երբ որ անձի հետ գնում ես հյուր, երբ որ հայտնում ես իր միջավայրում, իր ընկերական միջավայրում, բակային, ընտանեկան միջավայրում։
+EN: When you're with someone, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them, when you're with them.
+    (latency 3.7s = silence wait 0.0 + queue 0.0 + asr 2.1 + speaker/mt 1.6; audio 10.0s; cut at max length; voice match 0.52)
+
+[00:00:52] Speaker 1
+HY: դու տեսնում ես, թե ինքը ինչպեսա դրսևորվում, ինչպեսա սնվում, ինչպեսա խոսում իր հարազատների հետ, ոնցա վերաբերվում, եթե դու իր հետ ժամանակ ես անցկասնում, դու տեսնում ես, թե ինքը ինչպեսա դրսևորվում, ին�
+EN: You see how he behaves, how he feeds, how he talks to his relatives, how he treats you, if you spend time with him, you see how he behaves.
+    (latency 3.6s = silence wait 0.0 + queue 0.0 + asr 3.2 + speaker/mt 0.4; audio 10.0s; cut at max length; voice match 0.70)
+
+[00:01:02] Speaker 1
+HY: ինքը ոնցա հերախոսով խոսում, այլ մարդկանց հետ ոնցա շպվում ինքը, ու ենպես ինչպես ինքը այլ մարդկանց է վերաբերվում, իրենց հետևից է խոսում, մի գուծ է չարախոսում։
+EN: He speaks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character, he talks like a character.
+    (latency 4.0s = silence wait 0.0 + queue 0.0 + asr 2.7 + speaker/mt 1.2; audio 10.0s; cut at max length; voice match 0.73)
+
+[00:01:12] Speaker 1
+HY: մի գուծ է չգիտեմ, վատ խոսքեր է ոգտագործում, կամ անհարգալից է իր ծնողների հանդեպ, կամ անհարգալից է ինչ-որ մեկի հանդեպ փողոցում։
+EN: I don't know if it's a bully, a drunkard, or disrespectful of his parents, or disrespectful of someone on the street.
+    (latency 2.5s = silence wait 0.0 + queue 0.0 + asr 2.1 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.81)
+
+[00:01:22] Speaker 1
+HY: կամայական, վաղը դու ես հայտնվելու է դերում, երբ որ դու դարնաս սովորական իր համար։ Հետևաբար մենք գալիս ենք էլի առժեքներին, որ են ամենք էլի առժեքներին, որ են ամենք էլի առժեքներին։
+EN: You'll be in the role tomorrow when you're old enough for her. So we're going to the infinitesimals, which are all infinitesimals, which are all infinitesimals.
+    (latency 3.4s = silence wait 0.0 + queue 0.0 + asr 3.1 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.81)
+
+[00:01:32] Speaker 1
+HY: ամեն ինչը, ինչը մարդ ունի իր ներսում, դա կարող ես թակցնել մեկ ամիս, երկու ամիս, չգիրտեմ, ինչ պիտի լինի, որ երեկ ամիս թակցնես, բայց...
+EN: Everything you have inside of you, you can put it away for a month, two months, I don't know what it would be like to put it away for a month, but...
+    (latency 3.2s = silence wait 0.0 + queue 0.0 + asr 2.8 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.83)
+
+[00:01:42] Speaker 1
+HY: ինչ-որ իրավիճակներում մարդ տրսևորվում է։ Ողակի որքանով ենք մենք պատրաստ տեսնելուդը, ընկալելուդը, ինչպիսին է ինքը։
+EN: In some situations, a person is upset. Just how much we're willing to see him, to see him as he is.
+    (latency 2.2s = silence wait 0.0 + queue 0.0 + asr 2.0 + speaker/mt 0.2; audio 10.0s; cut at max length; voice match 0.77)
+
+[00:01:52] Speaker 2
+HY: են ինչ, որ դու պատկիրացնում ես, թե են ինչ, որ իրարկանում կա, որովհետև գիտեք շատ քիչ դեպքերում մարդիկ կաղարանում են թակսնել իրենց։
+EN: It's what you own, it's what you hate, because you know very rarely do people hate themselves.
+    (latency 2.4s = silence wait 0.0 + queue 0.0 + asr 2.2 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.11)
+
+[00:02:02] Speaker 2
+HY: լավովատ գողմերը։ Բայց մի փոքր ուշադիր լինելու դևքում էտ ամենչը տեսանելի է։ Հետո անակնգալները շատ քիչ են լինելու։ Հակյանքը ձեզ անակնգալները կարող է բերելու։
+EN: The good old days. But if you're a little more careful, you can see everything in the mirror. And then there will be very few survivors. Life can bring you surprises.
+    (latency 2.9s = silence wait 0.0 + queue 0.0 + asr 2.7 + speaker/mt 0.2; audio 10.0s; cut at max length; voice match 0.83)
+
+[00:02:12] Speaker 2
+HY: չկանխատեսված իրադարսությունների, առողջական, տարբեր իրավիճակները, բայց մարդու ով լինելը...
+EN: unforeseen occurrences, health, different situations, but being a human being...
+    (latency 2.3s = silence wait 0.6 + queue 0.0 + asr 1.5 + speaker/mt 0.2; audio 7.2s; voice match 0.85)
+
+[00:02:19] Speaker 2
+HY: աղր տեսանելի է չէ շպման մեջ։ Չես տեսնում, եթե չես ուզում տեսնել։ Եթե իսկզբան է, ստեղծել ես։
+EN: The salt is not visible in the mirror. You can't see if you don't want to see. If it's the first time, you've created it.
+    (latency 2.5s = silence wait 0.6 + queue 0.0 + asr 1.7 + speaker/mt 0.2; audio 7.2s; voice match 0.80)
+
+[00:02:27] Speaker 2
+HY: Միվական մի գեր բա։
+EN: It's a mythical superbug.
+    (latency 1.5s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.1; audio 2.2s; voice match 0.59)
+
+^C
+Stopping...
+
+Session: 16 lines, latency mean 2.8s, max 4.0s, over 5 s: 0; dropped segments: 0
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ 

@@ -199,6 +199,18 @@ requirements.txt
 ```
 No model weights, audio recordings or keys are committed (`.gitignore`). Recordings used for testing stay local in `recordings/`.
 
+## How I worked (and where I deviated from the recommended practice)
+
+* **Plan, then a walking skeleton:** the first session broke the brief into requirements and stages with a check for each; the first working version was mic-only end to end (Stage 5), then the weakest link was improved — mostly speaker labels and robustness.
+* **Measure, don't guess:** every model and threshold choice in §5–§6 comes from a measurement on my own Armenian clips or a recorded live test, with decision rules fixed before looking at the results. Several assumptions turned out wrong and were corrected from data (mic volume, a single speaker threshold, the Bluetooth mic, GPU memory).
+* **Small commits** after every working step (see `git log`).
+* **Failures stay visible:** the few fallbacks print what they do (Bluetooth mic replaced, a phrase skipped after a GPU error) instead of hiding it.
+* **Deviations:** the decision log and test list live in this README (§5–§6) rather than separate `PLAN.md`/`DECISIONS.md`/`TESTS.md` files, and most of the work happened in one long chat instead of focused chats with handovers. There are measurement scripts but no automated unit tests.
+
 ## AI assistance
 
 Built with Claude (Cowork) as required; the full, unedited conversations are in `chats/`.
+
+I also used ChatGPT to translate Claude's English replies into Armenian, to ask follow-up questions so I understood them (for example, where the speaker embeddings come from), and occasionally for a second opinion on an explanation or small terminal help. It did not write the project code and did not make the design decisions; those came from the Claude session and my own measurements. The ChatGPT conversation is in `chats/`; that export is **incomplete** (ChatGPT does not keep long chats fully loaded in the page) — the file says exactly what is missing, and the full official export is requested.
+
+The Claude transcript was produced from the saved share page with `scripts/claude_html_to_md.py` (copy-paste silently dropped most of this long conversation).

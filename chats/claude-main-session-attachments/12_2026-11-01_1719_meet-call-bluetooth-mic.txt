@@ -1,0 +1,197 @@
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ python -m live_translate --latency --debug-dir recordings/debug_call1
+Loading models: ASR large-v3 (int8_float16), MT nllb-600M, speaker ECAPA (threshold 0.3) ...
+Listening: Me <- P9
+Listening: call side <- Monitor of P9
+Speak Armenian. Press Ctrl+C to stop.
+
+[00:00:01] Me
+HY: Քուարերպես, ես ում այդ ինձ եմ է նորմալ։
+EN: Quarterly, that's who I am.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.2; audio 3.4s)
+
+[00:00:05] Speaker 1
+HY: Հալ ես մայնք նով մել ես հումա։
+EN: If you're a mother, you've got a home.
+    (latency 1.5s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.2; audio 3.0s)
+
+[00:00:11] Me
+HY: Շատ մավարդեր կայանք սկսենք մեր այսօրվա գոլը, արեն պատմի ինչեր էց ավել։
+EN: We've had a lot of success starting with our goal of today, let's make history.
+    (latency 1.7s = silence wait 0.0 + queue 0.0 + asr 1.5 + speaker/mt 0.2; audio 8.0s; cut at max length)
+
+[00:00:19] Me
+HY: առելու։
+EN: I'm going to get it.
+    (latency 1.6s = silence wait 0.6 + queue 0.6 + asr 0.4 + speaker/mt 0.1; audio 1.2s)
+
+[00:00:20] Me
+HY: թասքիրը թրանք հայցրել է։
+EN: I'm sorry, but I'm not here to tell you.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.2; audio 2.2s)
+
+[00:00:24] Speaker 1
+HY: Հայոտ հասկերը ձարջանցրել եմ։
+EN: I've been overlooking the idea.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.1; audio 3.8s; voice match 0.51)
+
+[00:00:27] Speaker 1
+HY: Քասկերից սպացի կիչ-գիտրկան հոլվածներից վրա եմ աշխոտ եմ։
+EN: I'm a little bit of a caterpillar, and I'm really excited about it.
+    (latency 2.1s = silence wait 0.6 + queue 0.1 + asr 1.1 + speaker/mt 0.3; audio 5.3s; voice match 0.55)
+
+[00:00:33] Speaker 1
+HY: Հեռևանում վերադարձը։
+EN: The return is far away.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 2.7s; voice match 0.62)
+
+[00:00:32] Me
+HY: Հույս աճատ ին կանիկան խոսով։
+EN: Hope grows in words.
+    (latency 1.7s = silence wait 0.6 + queue 0.3 + asr 0.7 + speaker/mt 0.1; audio 3.6s)
+
+[00:00:39] Me
+HY: Միկրովոնը սանջատի է։
+EN: The microwave is a squirrel.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 2.8s)
+
+[00:00:45] Me
+HY: առենք արել շամայտում։
+EN: Let's do it in the hammock.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 2.4s)
+
+[00:00:49] Speaker 1
+HY: Միխով սկով։
+EN: It's a fly on the wall.
+    (latency 1.2s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.1; audio 1.6s; voice match 0.56)
+
+[00:00:51] Speaker 1
+HY: տենց գնացել եմ գիտական խոտվածներից վրայամ աշխատ է, հետը մի եկեր վեր երևան։
+EN: That's where I went to work in science fiction, and I didn't see the back of it.
+    (latency 2.2s = silence wait 0.6 + queue 0.1 + asr 1.3 + speaker/mt 0.3; audio 6.5s; voice match 0.70)
+
+[00:00:58] Speaker 1
+HY: Մայր վաղը պատրաստրում եմ, որ գնամ աշխատանք ելին։
+EN: Mom, I'm getting ready to go to work tomorrow.
+    (latency 1.8s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.2; audio 4.4s; voice match 0.72)
+
+[00:01:04] Me
+HY: Որ տրես աշխատում, որպես ինչ, ենթաք ենք չգիտեմ, պես գիտեմ։
+EN: That you're working as what, you don't know, as I know.
+    (latency 2.0s = silence wait 0.6 + queue 0.0 + asr 1.1 + speaker/mt 0.2; audio 6.4s)
+
+[00:01:12] Speaker 1
+HY: աշխոտմ եմ արմատանալիթիքսում որպես կենսավիճակագիր կամ բիոստատ։
+EN: I'm working on my roots as a biographer or biographer.
+    (latency 2.1s = silence wait 0.6 + queue 0.1 + asr 1.2 + speaker/mt 0.2; audio 6.9s; voice match 0.77)
+
+[00:01:20] Me
+HY: Հատ տավա։
+EN: It's a big bowl.
+    (latency 1.1s = silence wait 0.6 + queue 0.0 + asr 0.4 + speaker/mt 0.1; audio 1.5s)
+
+[00:01:22] Speaker 1
+HY: էտ ազոտ սմներիվրը իմնական գլինիկական։
+EN: It's not a clinical trial, it's a medical trial.
+    (latency 1.7s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.2; audio 4.2s; voice match 0.69)
+
+[00:01:25] Me
+HY: Հիմա արդվային էկեք խոսատողը հանդնենք մեր մյուս մասմակցին և պատմեք դու կայսողջ։
+EN: Now, why don't you put the speaker on the other side of the room and tell me about it?
+    (latency 1.8s = silence wait 0.0 + queue 0.0 + asr 1.5 + speaker/mt 0.3; audio 8.0s; cut at max length)
+
+[00:01:32] Speaker 1
+HY: Մհում։
+EN: It's a mystery.
+    (latency 2.3s = silence wait 0.6 + queue 1.2 + asr 0.4 + speaker/mt 0.1; audio 1.5s; voice match 0.19)
+
+[00:01:33] Me
+HY: առել եկպես ասել եմ։
+EN: Let me tell you something.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 2.7s)
+
+[00:01:37] Speaker 1
+HY: Հայո արելըմ։
+EN: It's my father's heart.
+    (latency 1.2s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.1; audio 1.8s; voice match 0.03)
+
+[00:01:39] Speaker 1
+HY: Հիմայլ
+EN: What are you thinking?
+    (latency 1.1s = silence wait 0.6 + queue 0.0 + asr 0.4 + speaker/mt 0.1; audio 2.0s; voice match 0.15)
+
+[00:01:41] Speaker 2
+HY: Պորձում եղվիկի դիմահարդարումանը կույիքի սնրա։
+EN: I'm trying to make a mask out of a pair of shoes.
+    (latency 1.8s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.2; audio 4.5s; voice match 0.19)
+
+[00:01:46] Me
+HY: Ո՞ս ատլավը։
+EN: What tooth?
+    (latency 1.2s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.1; audio 2.1s)
+
+[00:01:48] Me
+HY: Ու մանտաստացում նորմալ բահում է։
+EN: And meditation is normal.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.1; audio 5.5s)
+
+[00:01:54] Speaker 2
+HY: Շատ լարապահում, շատ ու լախա։
+EN: He's very alert, he's very shy.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.2; audio 2.7s; voice match 0.48)
+
+[00:02:01] Me
+HY: ինձ բատքա, որ դու էլի ավել բանում խոսած բատքա, երկա ինչը նախոտայցում ես ասկարած, հիմա վերցնում սկիրտ ու կարթաց ներկու նախոտայցում։
+EN: I'm so glad you're a little bit more of a talking bitch than you've been saying before, and now you're going to take a dip and a dip in a dip.
+    (latency 2.6s = silence wait 0.0 + queue 0.0 + asr 2.1 + speaker/mt 0.5; audio 8.0s; cut at max length)
+
+[00:02:13] Speaker 2
+HY: Շատ անվարդացել։
+EN: It's very uncomplicated.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 2.9s; voice match 0.47)
+
+[00:02:15] Speaker 2
+HY: Համալ սրանում դա սերես։
+EN: You're going to do this.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 2.1s; voice match 0.63)
+
+[00:02:18] Speaker 2
+HY: Վայց զեր գլուխենք անում։
+EN: But let's get on with it.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 2.3s; voice match 0.66)
+
+[00:02:20] Speaker 2
+HY: Պիպոպի։
+EN: You know, Pippi.
+    (latency 1.1s = silence wait 0.6 + queue 0.0 + asr 0.4 + speaker/mt 0.1; audio 1.8s; voice match 0.28)
+
+[00:02:21] Me
+HY: Հովհարարդյայիք ստույկում։
+EN: I'm going to look into the shadows.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.2; audio 2.4s)
+
+[00:02:25] Speaker 2
+HY: Մաթեմաթիկայից պեծել չեմ դրգողում, շատ լավա։
+EN: I'm not a mathematician, I'm very good.
+    (latency 1.7s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.2; audio 3.9s; voice match 0.73)
+
+[00:02:29] Me
+HY: արդի եթե մի հատել ես պիպուպի արել, կսպան եմ եսքեր։
+EN: Well, if you cut a pipe, I'll kill the eggs.
+    (latency 1.8s = silence wait 0.6 + queue 0.0 + asr 1.0 + speaker/mt 0.2; audio 5.2s)
+
+[00:02:38] Me
+HY: լա վիերը վի այսքանը, իհարդ ուղարդ կենք սկլոդինք, բանակ ինչ հաղ սում։
+EN: Let's get this straight, we're going to have a squadron, an army that's going to win.
+    (latency 2.2s = silence wait 0.6 + queue 0.0 + asr 1.3 + speaker/mt 0.3; audio 6.4s)
+
+^C
+Stopping...
+[00:02:49] Me
+HY: Սիշովություն։
+EN: What is it that you do not see?
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.1; audio 2.8s)
+
+
+Session: 37 lines, latency mean 1.6s, max 2.6s, over 5 s: 0; dropped segments: 0
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ 
+

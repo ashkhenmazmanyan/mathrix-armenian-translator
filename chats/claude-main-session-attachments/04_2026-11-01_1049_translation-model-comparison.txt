@@ -1,0 +1,151 @@
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ pip install "transformers>=4.45,<5" sentencepiece
+python -c "import transformers, sentencepiece; print(transformers.__version__)"
+Collecting transformers<5,>=4.45
+  Downloading transformers-4.57.6-py3-none-any.whl.metadata (43 kB)
+Collecting sentencepiece
+  Downloading sentencepiece-0.2.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (33 kB)
+Requirement already satisfied: filelock in ./.venv/lib/python3.12/site-packages (from transformers<5,>=4.45) (4.2.5)
+Collecting huggingface-hub<1.0,>=0.34.0 (from transformers<5,>=4.45)
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: numpy>=1.17 in ./.venv/lib/python3.12/site-packages (from transformers<5,>=4.45) (2.5.4)
+Requirement already satisfied: packaging>=20.0 in ./.venv/lib/python3.12/site-packages (from transformers<5,>=4.45) (26.3)
+Requirement already satisfied: pyyaml>=5.1 in ./.venv/lib/python3.12/site-packages (from transformers<5,>=4.45) (6.0.3)
+Collecting regex!=2019.12.17 (from transformers<5,>=4.45)
+  Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting requests (from transformers<5,>=4.45)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers<5,>=4.45)
+  Using cached tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Collecting safetensors>=0.4.3 (from transformers<5,>=4.45)
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Requirement already satisfied: tqdm>=4.27 in ./.venv/lib/python3.12/site-packages (from transformers<5,>=4.45) (4.70.1)
+Requirement already satisfied: fsspec>=2023.5.0 in ./.venv/lib/python3.12/site-packages (from huggingface-hub<1.0,>=0.34.0->transformers<5,>=4.45) (2026.9.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in ./.venv/lib/python3.12/site-packages (from huggingface-hub<1.0,>=0.34.0->transformers<5,>=4.45) (1.8.0)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in ./.venv/lib/python3.12/site-packages (from huggingface-hub<1.0,>=0.34.0->transformers<5,>=4.45) (4.16.0)
+Collecting charset_normalizer<4,>=2 (from requests->transformers<5,>=4.45)
+  Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Requirement already satisfied: idna<4,>=2.5 in ./.venv/lib/python3.12/site-packages (from requests->transformers<5,>=4.45) (3.20)
+Collecting urllib3<3,>=1.26 (from requests->transformers<5,>=4.45)
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests->transformers<5,>=4.45)
+  Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+Downloading transformers-4.57.6-py3-none-any.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 13.1 MB/s  0:00:00
+Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 6.8 MB/s  0:00:00
+Using cached tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+Downloading sentencepiece-0.2.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 20.2 MB/s  0:00:00
+Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.8/807.8 kB 20.8 MB/s  0:00:00
+Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+Installing collected packages: urllib3, sentencepiece, safetensors, regex, charset_normalizer, certifi, requests, huggingface-hub, tokenizers, transformers
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface_hub 2.4.0
+    Uninstalling huggingface_hub-2.4.0:
+      Successfully uninstalled huggingface_hub-2.4.0
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.23.3
+    Uninstalling tokenizers-0.23.3:
+      Successfully uninstalled tokenizers-0.23.3
+Successfully installed certifi-2026.10.23 charset_normalizer-3.5.2 huggingface-hub-0.36.2 regex-2026.9.29 requests-2.34.2 safetensors-0.8.0 sentencepiece-0.2.2 tokenizers-0.22.2 transformers-4.57.6 urllib3-2.8.0
+4.57.6
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ python scripts/compare_mt.py
+11 clips, models: ['opus-mt', 'nllb-600M', 'nllb-1.3B'], beams: 4
+
+/home/ashkhen/Projects/mathrix-armenian-translator/.venv/lib/python3.12/site-packages/transformers/models/marian/tokenization_marian.py:175: UserWarning: Recommended: pip install sacremoses.
+  warnings.warn("Recommended: pip install sacremoses.")
+`torch_dtype` is deprecated! Use `dtype` instead!
+[opus-mt] me_01 REF: 0.06s  Hi, how are you? We didn't speak tomorrow. What news are you doing?
+[opus-mt] me_01 ASR: 0.07s  Hi, as I'm not talking early on, what news is there, it's kind of hot stuff.
+[opus-mt] me_02 REF: 0.06s  It's just one, two thousand years. It's worth 12 thousand dollars.
+[opus-mt] me_02 ASR: 0.06s  It's one day, 2026, he's a ticket on 12,500.
+[opus-mt] me_03 REF: 0.08s  Then we went with Anna and David.
+[opus-mt] me_03 ASR: 0.11s  So we went with three of them and I went with them, and we went with them, and we went there with them, and we went with them.
+[opus-mt] me_04 REF: 0.08s  I've just finished university recently, and I'm looking for work where I can apply mathematics and learn new things.
+[opus-mt] me_04 ASR: 0.12s  I'm going to end this thing, and now I'm going to do a job where I'm going to get a fast-being, and I'm going to learn new things.
+model.safetensors:   0%|                                    | 0.00/307M [00:00<?, ?B/s][opus-mt] me_05 REF: 0.10s  You know, I was so busy today that I didn't even have a meal.
+[opus-mt] me_05 ASR: 0.11s  What I was so busy today is that I didn't have a meal, I'm going to finish quickly, but I'm going to have another car.
+[opus-mt] video_01 REF: 0.09s  If we talk more about relationships and our sharing, what do you expect from the cover, because by the way, you're talking about each other?
+[opus-mt] video_01 ASR: 0.10s  If you talk more about relationships and arguments, what you expect about me is because, by the way, it's about how you're going to deal with me.
+[opus-mt] video_02 REF: 0.10s  Of course, because I don't have a chosen name, it's really good to find him through this break, and T.
+[opus-mt] video_02 ASR: 0.13s  I'm sorry I don't have a chosen one, I'm sorry if I'm going to make her look like this, and it doesn't matter how much I'm going to do.
+[opus-mt] video_03 REF: 0.07s  And then what I started to say was a little bit like,
+[opus-mt] video_03 ASR: 0.08s  So I'm a bit more social stuff, but then I would say something very hard to say, something like this.
+[opus-mt] video_04 REF: 0.10s  I'm sorry you think, love is no matter how good and bad you're, or what you're doing.
+[opus-mt] video_04 ASR: 0.10s  I'm going to tell you that love, regardless of the bad relationship in every other person or the other person, gets the same point.
+[opus-mt] video_05 REF: 0.12s  But the level is that you've got this kind of love in love. I don't have to know, because I don't have to know that the bacteria are going to get out of the belly.
+[opus-mt] video_05 ASR: 0.12s  From the level that you've got to be in, you've had this kind of passion. I haven't had a car, you've had a car to jump.
+[opus-mt] video_06 REF: 0.10s  I'm a professional manager. I'm working in a hotel station, and now I'm a third-year-old lawyer, I'm learning now.
+[opus-mt] video_06 ASR: 0.17s  I'm 25 years old, I'm a part-year-old manager, I'm working in the N-Aveny Valley, and I'm going to be a part of the 21st century, and I'm learning a little bit.
+
+     [nllb-600M] me_01 REF: 0.22s  Hi, how are you? We haven't spoken in a long time. What's the news? What are you doing?
+[nllb-600M] me_01 ASR: 0.19s  Well, like me, we don't talk about what's new, what's going on.
+[nllb-600M] me_02 REF: 0.22s  Today is November 1, the year two thousand twenty-six. The ticket costs twelve thousand five hundred drachmas.
+[nllb-600M] me_02 ASR: 0.15s  It's November 1, 2026, and the price is 12,500.
+[nllb-600M] me_03 REF: 0.28s  Yesterday we went to Yerevan with Hannah and David. We walked along the northern highway and came to Khaskad.
+[nllb-600M] me_03 ASR: 0.33s  Three of us, together with Anna and David, went to the plain, and we stopped on the north side of the highway, and we came to Saskatchewan, and we turned around.
+[nllb-600M] me_04 REF: 0.22s  I just graduated from university and now I'm looking for a job where I can apply my knowledge of mathematics and learn new things.
+[nllb-600M] me_04 ASR: 0.23s  I graduated with a degree in math and now I'm looking for a job where I can get my math skills up and learn new things.
+[nllb-600M] me_05 REF: 0.25s  You know, I was so busy today that I didn't even get to eat. I thought I'd finish soon, but I got something else.
+[nllb-600M] me_05 ASR: 0.27s  You see, I was so busy today that I couldn't eat the same meal, and I thought I was going to finish soon, but I got a full lunch.
+[nllb-600M] video_01 REF: 0.21s  If we talk more about relationships and our communication, well, what do you expect from today's release, because anyway?
+[nllb-600M] video_01 ASR: 0.21s  If we're talking more about relationships and communication, what you're expecting is what makes me nervous, because anyway.
+[nllb-600M] video_02 REF: 0.20s  Of course, since I don't have a choice, it would certainly be great if I could find him through this transmission.
+[nllb-600M] video_02 ASR: 0.34s  It's a shame I don't have a choice, it's a shame it'll be a lot of fun if I get into her spongebox, and I'm already hanging by a thread.
+[nllb-600M] video_03 REF: 0.23s  It's Emma Watson, something more social, but then you start saying something stereotypical, a little, something stereotypical.
+[nllb-600M] video_03 ASR: 0.23s  I'm addicted to some more social stuff, but then I start saying some stereotypical stuff, a little bit of stereotypical stuff.
+[nllb-600M] video_04 REF: 0.23s  I understand you're thinking that love, no matter what, good or bad, relationships or the other person, always ends.
+[nllb-600M] video_04 ASR: 0.19s  I understand that you may think that love is the same regardless of good or bad relationships or good or bad relationships.
+[nllb-600M] video_05 REF: 0.18s  But to the extent that there are butterflies digging, when have you ever been in love like this?
+[nllb-600M] video_05 ASR: 0.22s  But to the extent that there are butterflies in the excavation, that's the kind of love you've ever had.
+[nllb-600M] video_06 REF: 0.36s  Twenty-five years old, I'm a manager by profession. I work in a hotel-resort complex. Now I'm a lawyer by profession.
+[nllb-600M] video_06 ASR: 0.34s  I'm 25 years old, I'm a math manager, I work in a multi-millionaire complex, and I'm a math psychologist in the future, and I'm a math student.
+
+     [nllb-1.3B] me_01 REF: 0.32s  Hi, how are you? It's been a while. What's up?
+[nllb-1.3B] me_01 ASR: 0.32s  Hey, like me, we haven't talked about what's new, that's business.
+[nllb-1.3B] me_02 REF: 0.41s  Today is November 1, the year two thousand twenty-six. The ticket costs twelve thousand five hundred drachmas.
+[nllb-1.3B] me_02 ASR: 0.27s  It's November 1st, 2026, and the fare is 12,500.
+[nllb-1.3B] me_03 REF: 0.35s  Yesterday we went to Yerevan with Anna and David. We walked down North Avenue and reached the Cascades.
+[nllb-1.3B] me_03 ASR: 0.42s  Three of us, Anna and David, went to Yerevan, followed the northern road and reached the cascade, which we turned back.
+[nllb-1.3B] me_04 REF: 0.40s  I recently graduated from college and am now looking for a job where I can apply my math skills and learn new things.
+[nllb-1.3B] me_04 ASR: 0.41s  I'm finally done with this, and now I'm looking for a job where I can broaden my math skills and learn new things.
+[nllb-1.3B] me_05 REF: 0.48s  You know, I was so busy today, I didn't even get to eat.
+[nllb-1.3B] me_05 ASR: 0.57s  You know, I've been so busy today, I didn't even sit down to eat, and I thought I'd be done early, but I've got a full plate.
+[nllb-1.3B] video_01 REF: 0.36s  Speaking more about relationships and our show, yeah, what are your expectations for tonight's show, because anyway,
+[nllb-1.3B] video_01 ASR: 0.40s  If we talk more like relationships and in terms of communication, what expectations do you have of a sharp release from me, because anyway.
+[nllb-1.3B] video_02 REF: 0.37s  Of course, since I don't have a choice, of course it would be nice if I could find him through this show.
+[nllb-1.3B] video_02 ASR: 0.49s  No, because I don't have a choice, no, it would be very convenient if I put her in a green shirt, and she's already hanging.
+[nllb-1.3B] video_03 REF: 0.43s  Specifically Emma Watson, more social stuff, but then you started saying some stereotypical stuff, a little bit of stereotypical stuff.
+[nllb-1.3B] video_03 ASR: 0.41s  I was hooked on more social stuff, but then I started saying some stereotypical stuff, some very stereotypical stuff.
+[nllb-1.3B] video_04 REF: 0.51s  I know you're thinking that no matter what happens, whether it's good or bad, whether it's a relationship or the other person, love just keeps going.
+[nllb-1.3B] video_04 ASR: 0.44s  Now, I know you're thinking that no matter how bad the relationship, whether it's the best or the worst, love will always be the same.
+[nllb-1.3B] video_05 REF: 0.38s  But at the level of butterflies in a burrow, when did you have that kind of infatuation?
+[nllb-1.3B] video_05 ASR: 0.40s  But at a level where there are butterflies in the pit, that's the kind of love you've ever had.
+[nllb-1.3B] video_06 REF: 0.59s  I'm 25 years old, I'm a manager by profession, I work in a hotel-restaurant complex, and now I'm a lawyer by profession, now I'm studying.
+[nllb-1.3B] video_06 ASR: 0.59s  I'm 25 years old, I'm a crowdfunding manager, I work in a crowdfunding complex, I'm a future crowdfunder, I'm a student.
+
+Summary:
+  opus-mt    load  3.9s  peak GPU    165 MB  time/sentence mean 0.10s worst 0.17s
+  nllb-600M  load  6.7s  peak GPU   1220 MB  time/sentence mean 0.24s worst 0.36s
+  nllb-1.3B  load 14.6s  peak GPU   2678 MB  time/sentence mean 0.42s worst 0.59s
+
+Report written to results/mt_opus-mt+nllb-600M+nllb-1.3B_beam4.md
+model.safetensors: 100%|████████████████████████████| 307M/307M [01:44<00:00, 2.94MB/s]
+model.safetensors:  45%|███████████▊              | 1.12G/2.46G [01:38<00:37, 36.3MB/s]
+
+model.safetensors:  19%|████▊                     | 1.02G/5.48G [03:52<10:54, 6.81model.safetensors:  84%|█████████████████████▋    | 2.06G/2.46G [04:14<00:59, 6.81model.safetensors:  86%|██████████████████████▍   | 2.12G/2.46G [04:18<00:42, 7.95MB/s]
+model.safetensors:  89%|███████████████████████▏  | 2.19G/2.46G [04:26<00:34, 7.88MB/s]
+model.safetensors:  89%|███████████████████████▏  | 2.19G/2.46G [04:44<00:34, 7.88MB/s]
+model.safetensors:  92%|███████████████████████▊  | 2.26G/2.46G [05:02<00:46, 4.40model.safetensors:  94%|████████████████████████▌ | 2.32G/2.46G [05:08<00:26, 5.20MB/s]
+model.safetensors:  97%|█████████████████████████▎| 2.39G/2.46G [05:09<00:10, 6.96MB/s]
+model.safetensors:  97%|█████████████████████████▎| 2.39G/2.46G [05:24<00:10, 6.96MB/s]
+model.safetensors: 100%|██████████████████████████| 2.46G/2.46G [05:49<00:00, 7.04MB/s]
+
+
+model.safetensors:  27%|██████▉                   | 1.48G/5.48G [05:44<18:54, 3.53model.safetensors:  31%|███████▉                  | 1.68G/5.48G [05:49<09:32, 6.65model.safetensors:  32%|████████▎                 | 1.74G/5.48G [05:49<07:34, 8.23model.safetensors:  33%|████████▌                 | 1.81G/5.48G [05:56<07:06, 8.61model.safetensors:  33%|████████▌                 | 1.81G/5.48G [06:12<07:06, 8.61model.safetensors:  34%|████████▉                 | 1.88G/5.48G [06:31<12:50, 4.68model.safetensors:  35%|█████████▏                | 1.94G/5.48G [06:39<11:11, 5.27model.safetensors:  37%|█████████▌                | 2.01G/5.48G [06:45<09:22, 6.17model.safetensors:  40%|██████████▍               | 2.21G/5.48G [06:46<04:18, 12.7model.safetensors:  42%|██████████▊               | 2.28G/5.48G [06:52<04:17, 12.4model.safetensors:  42%|██████████▊               | 2.28G/5.48G [07:02<04:17, 12.4model.safetensors:  43%|███████████▏              | 2.35G/5.48G [07:25<08:59, 5.82model.safetensors:  44%|███████████▍              | 2.41G/5.48G [07:32<08:05, 6.32model.safetensors:  45%|███████████▊              | 2.48G/5.48G [07:33<06:01, 8.30model.safetensors:  46%|████████████              | 2.55G/5.48G [07:37<04:59, 9.80model.safetensors:  49%|████████████▋             | 2.68G/5.48G [07:38<02:52, 16.2model.safetensors:  50%|█████████████             | 2.75G/5.48G [07:44<03:11, 14.3model.safetensors:  50%|█████████████             | 2.75G/5.48G [08:02<03:11, 14.3model.safetensors:  51%|█████████████▎            | 2.82G/5.48G [08:17<07:51, 5.66model.safetensors:  54%|█████████████▉            | 2.95G/5.48G [08:27<05:37, 7.51model.safetensors:  55%|██████████████▎           | 3.02G/5.48G [08:30<04:33, 9.01model.safetensors:  56%|██████████████▋           | 3.08G/5.48G [08:31<03:33, 11.2model.safetensors:  57%|██████████████▉           | 3.15G/5.48G [08:32<02:37, 14.8model.safetensors:  59%|███████████████▎          | 3.22G/5.48G [08:41<03:14, 11.6model.safetensors:  59%|███████████████▎          | 3.22G/5.48G [08:52<03:14, 11.6model.safetensors:  60%|███████████████▌          | 3.29G/5.48G [09:14<07:22, 4.96model.safetensors:  62%|████████████████▏         | 3.42G/5.48G [09:20<04:33, 7.53model.safetensors:  64%|████████████████▌         | 3.49G/5.48G [09:23<03:37, 9.19model.safetensors:  65%|████████████████▊         | 3.55G/5.48G [09:25<02:54, 11.0model.safetensors:  66%|█████████████████▏        | 3.62G/5.48G [09:26<02:10, 14.2model.safetensors:  67%|█████████████████▍        | 3.69G/5.48G [09:33<02:19, 12.9model.safetensors:  67%|█████████████████▍        | 3.69G/5.48G [09:52<02:19, 12.9model.safetensors:  68%|█████████████████▊        | 3.76G/5.48G [10:04<05:27, 5.27model.safetensors:  71%|██████████████████▍       | 3.89G/5.48G [10:12<03:29, 7.60model.safetensors:  73%|███████████████████       | 4.02G/5.48G [10:17<02:15, 10.8model.safetensors:  75%|███████████████████▍      | 4.09G/5.48G [10:24<02:12, 10.5model.safetensors:  76%|███████████████████▋      | 4.16G/5.48G [10:24<01:37, 13.6model.safetensors:  76%|███████████████████▋      | 4.16G/5.48G [10:42<01:37, 13.6model.safetensors:  77%|████████████████████      | 4.22G/5.48G [10:54<03:30, 5.98model.safetensors:  82%|█████████████████████▎    | 4.49G/5.48G [11:05<01:31, 10.8model.safetensors:  84%|█████████████████████▉    | 4.63G/5.48G [11:17<01:18, 10.8model.safetensors:  84%|█████████████████████▉    | 4.63G/5.48G [11:32<01:18, 10.8model.safetensors:  86%|██████████████████████▎   | 4.69G/5.48G [11:44<01:55, 6.85model.safetensors:  88%|██████████████████████▉   | 4.84G/5.48G [11:51<01:12, 8.89model.safetensors:  89%|███████████████████████▏  | 4.90G/5.48G [11:54<00:58, 9.96model.safetensors:  92%|███████████████████████▉  | 5.04G/5.48G [12:09<00:46, 9.64model.safetensors:  93%|████████████████████████▏ | 5.10G/5.48G [12:13<00:35, 10.5model.safetensors:  96%|████████████████████████▊ | 5.24G/5.48G [12:31<00:26, 9.10model.safetensors:  97%|█████████████████████████▏| 5.31G/5.48G [12:35<00:17, 9.97model.safetensors: 100%|██████████████████████████| 5.48G/5.48G [12:42<00:00, 7.19MB/s].safetensors: 100%|██████████████████████████| 5.48G/5.48G [12:42<00:00, 14.2(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ 
+

@@ -1,0 +1,84 @@
+ashkhen@mazmanyan-lnx:~$ lspci | grep -iE "vga|3d|nvidia"
+lsmod | grep -i nvidia
+ubuntu-drivers devices
+mokutil --sb-state
+cat /etc/os-release | head -3
+wpctl status | head -40
+00:02.0 VGA compatible controller: Intel Corporation Raptor Lake-S UHD Graphics (rev 04)
+01:00.0 VGA compatible controller: NVIDIA Corporation AD107M [GeForce RTX 4050 Max-Q / Mobile] (rev a1)
+01:00.1 Audio device: NVIDIA Corporation Device 22be (rev a1)
+nvidia_wmi_ec_backlight    12288  0
+video                  77824  4 nvidia_wmi_ec_backlight,ideapad_laptop,xe,i915
+wmi                    28672  10 lenovo_wmi_events,video,nvidia_wmi_ec_backlight,lenovo_wmi_hotkey_utilities,lenovo_wmi_other,wmi_bmof,lenovo_wmi_capdata01,lenovo_wmi_gamezone,ideapad_laptop,lenovo_wmi_helpers
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+udevadm hwdb is deprecated. Use systemd-hwdb instead.
+== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==
+modalias : pci:v000010DEd000028E1sv000017AAsd00003D06bc03sc00i00
+vendor   : NVIDIA Corporation
+model    : AD107M [GeForce RTX 4050 Max-Q / Mobile]
+driver   : nvidia-driver-580-server - distro non-free
+driver   : nvidia-driver-580-open - distro non-free
+driver   : nvidia-driver-580 - distro non-free
+driver   : nvidia-driver-595-server-open - distro non-free
+driver   : nvidia-driver-615-open - distro non-free
+driver   : nvidia-driver-595-server - distro non-free
+driver   : nvidia-driver-580-server-open - distro non-free
+driver   : nvidia-driver-595 - distro non-free
+driver   : nvidia-driver-595-open - distro non-free recommended
+driver   : nvidia-driver-615-server-open - distro non-free
+driver   : xserver-xorg-video-nouveau - distro free builtin
+
+SecureBoot disabled
+Platform is in Setup Mode
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+PipeWire 'pipewire-0' [1.0.5, ashkhen@mazmanyan-lnx, cookie:2036273243]
+ └─ Clients:
+        32. pipewire                            [1.0.5, ashkhen@mazmanyan-lnx, pid:2562]
+        34. WirePlumber                         [1.0.5, ashkhen@mazmanyan-lnx, pid:2560]
+        35. WirePlumber [export]                [1.0.5, ashkhen@mazmanyan-lnx, pid:2560]
+        55. gnome-shell                         [1.0.5, ashkhen@mazmanyan-lnx, pid:2823]
+        56. GNOME Shell Volume Control          [1.0.5, ashkhen@mazmanyan-lnx, pid:2823]
+        57. GNOME Volume Control Media Keys     [1.0.5, ashkhen@mazmanyan-lnx, pid:3016]
+        58. xdg-desktop-portal                  [1.0.5, ashkhen@mazmanyan-lnx, pid:3393]
+        59. gsd-power                           [1.0.5, ashkhen@mazmanyan-lnx, pid:3018]
+        60. Google Chrome input                 [1.0.5, ashkhen@mazmanyan-lnx, pid:7023]
+        61. LibreOffice 24.2                    [1.0.5, ashkhen@mazmanyan-lnx, pid:8894]
+        63. Telegram Desktop                    [1.0.5, ashkhen@mazmanyan-lnx, pid:8022]
+        64. Mutter                              [1.0.5, ashkhen@mazmanyan-lnx, pid:2823]
+        69. Terminal                            [1.0.5, ashkhen@mazmanyan-lnx, pid:9947]
+        71. Claude                              [1.0.5, ashkhen@mazmanyan-lnx, pid:16395]
+        86. claude-desktop                      [1.0.5, ashkhen@mazmanyan-lnx, pid:16141]
+        89. wpctl                               [1.0.5, ashkhen@mazmanyan-lnx, pid:18082]
+
+Audio
+ ├─ Devices:
+ │      48. HDA NVidia                          [alsa]
+ │      49. Built-in Audio                      [alsa]
+ │  
+ ├─ Sinks:
+ │  *   52. Built-in Audio Analog Stereo        [vol: 0.88]
+ │  
+ ├─ Sink endpoints:
+ │  
+ ├─ Sources:
+ │  *   53. Built-in Audio Analog Stereo        [vol: 0.19]
+ │  
+ ├─ Source endpoints:
+ │  
+ └─ Streams:
+
+Video
+ ├─ Devices:
+ │      43. Integrated Camera                   [v4l2]
+ │      44. Integrated Camera                   [v4l2]
+ashkhen@mazmanyan-lnx:~$ 

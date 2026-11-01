@@ -1,0 +1,39 @@
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ python scripts/test_speaker_labeling.py
+/home/ashkhen/Projects/mathrix-armenian-translator/.venv/lib/python3.12/site-packages/speechbrain/utils/torch_audio_backend.py:64: UserWarning: torchaudio._backend.list_audio_backends has been deprecated. This deprecation is part of a large refactoring effort to transition TorchAudio into a maintenance phase. The decoding and encoding capabilities of PyTorch for both audio and video are being consolidated into TorchCodec. Please see https://github.com/pytorch/audio/issues/3902 for more information. It will be removed from the 2.9 release. 
+  available_backends = torchaudio.list_audio_backends()
+/home/ashkhen/Projects/mathrix-armenian-translator/.venv/lib/python3.12/site-packages/speechbrain/utils/torch_audio_backend.py:64: UserWarning: torchaudio._backend.list_audio_backends has been deprecated. This deprecation is part of a large refactoring effort to transition TorchAudio into a maintenance phase. The decoding and encoding capabilities of PyTorch for both audio and video are being consolidated into TorchCodec. Please see https://github.com/pytorch/audio/issues/3902 for more information. It will be removed from the 2.9 release. 
+  available_backends = torchaudio.list_audio_backends()
+2 s pieces, pairwise similarity:
+  same person:      min 0.22  10% 0.38  median 0.52
+  different people: median 0.08  90% 0.21  max 0.30
+
+piece   thr merge speakers mixed consistent   truth+label sequence
+ 1.5s  0.25  None        4     1    27/30     A1 B2 C3 A4 B2 A1 B2 C2 A4 B2 A1 B2 C2 A1 B2 A1 B2 C2 A1 B2 A1 B2 C2 A1 B2 A1 B2 C2 A1 B2
+ 1.5s  0.25  0.55        4     1    27/30     A1 B2 C3 A4 B2 A1 B2 C2 A4 B2 A1 B2 C2 A1 B2 A1 B2 C2 A1 B2 A1 B2 C2 A1 B2 A1 B2 C2 A1 B2
+ 1.5s  0.30  None        6     0    26/30     A1 B2 C3 A4 B5 A1 B5 C6 A4 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5
+ 1.5s  0.30  0.55        6     0    26/30     A1 B2 C3 A4 B5 A1 B5 C6 A4 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5
+ 1.5s  0.35  None        6     0    26/30     A1 B2 C3 A4 B5 A1 B5 C6 A4 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5
+ 1.5s  0.35  0.55        6     0    26/30     A1 B2 C3 A4 B5 A1 B5 C6 A4 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5
+ 1.5s  0.40  None        7     0    25/30     A1 B2 C3 A4 B5 A1 B5 C6 A4 B5 A1 B7 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5
+ 1.5s  0.40  0.55        7     0    25/30     A1 B2 C3 A4 B5 A1 B5 C6 A4 B5 A1 B7 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5 A1 B5 C6 A1 B5
+
+ 2.0s  0.25  None        3     0    25/25     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 2.0s  0.25  0.55        3     0    25/25     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 2.0s  0.30  None        4     0    22/25     A1 B2 C3 A4 B2 A1 B2 C3 A4 B2 A4 B2 C3 A4 B2 A1 B2 C3 A4 B2 A4 B2 C3 A4 B2
+ 2.0s  0.30  0.55        4     0    23/25     A1 B2 C3 A4 B2 A1 B2 C3 A4 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 2.0s  0.35  None        5     0    21/25     A1 B2 C3 A4 B2 A1 B2 C5 A4 B2 A4 B2 C5 A4 B2 A1 B2 C5 A4 B2 A4 B2 C5 A4 B2
+ 2.0s  0.35  0.55        5     0    22/25     A1 B2 C3 A4 B2 A1 B2 C5 A4 B2 A1 B2 C5 A1 B2 A1 B2 C5 A1 B2 A1 B2 C5 A1 B2
+ 2.0s  0.40  None        6     0    19/25     A1 B2 C3 A4 B2 A1 B2 C5 A4 B2 A4 B2 C6 A4 B2 A1 B2 C5 A4 B2 A4 B2 C6 A4 B2
+ 2.0s  0.40  0.55        6     0    20/25     A1 B2 C3 A4 B2 A1 B2 C5 A4 B2 A1 B2 C6 A1 B2 A1 B2 C5 A1 B2 A1 B2 C6 A1 B2
+
+ 3.0s  0.25  None        3     0    15/15     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 3.0s  0.25  0.55        3     0    15/15     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 3.0s  0.30  None        3     0    15/15     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 3.0s  0.30  0.55        3     0    15/15     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 3.0s  0.35  None        3     0    15/15     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 3.0s  0.35  0.55        3     0    15/15     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 3.0s  0.40  None        3     0    15/15     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+ 3.0s  0.40  0.55        3     0    15/15     A1 B2 C3 A1 B2 A1 B2 C3 A1 B2 A1 B2 C3 A1 B2
+
+'A1 B2 C3 A1' = true speaker A shown as Speaker 1, B as Speaker 2, ...
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ 

@@ -1,0 +1,109 @@
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ python scripts/test_speaker_change.py
+video_01               cuts at: -                  (expected: no split)
+video_02               cuts at: 4.25s              (expected: no split)
+video_03               cuts at: -                  (expected: no split)
+video_04               cuts at: 1.50s              (expected: no split)
+video_06               cuts at: -                  (expected: no split)
+video_05 (A then B)    cuts at: 1.50s, 6.75s       (expected: 1 split at the A->B turn)
+A 5s + B 5s joined     cuts at: 3.75s, 5.25s, 8.00s (expected: 1 split near 5.0s)
+C 4s + A 6s joined     cuts at: 1.50s, 3.75s       (expected: 1 split near 4.0s)
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ python -m live_translate --no-mic --latency
+Loading models: ASR large-v3 (int8_float16), MT nllb-600M, speaker ECAPA (threshold 0.3) ...
+Listening: call side <- Monitor of P9
+Speak Armenian. Press Ctrl+C to stop.
+
+[00:00:00] Speaker 1
+HY: Ոյհա, երիս դա ժություն գիտա։
+EN: Oh, yeah, I know that.
+    (latency 0.9s = silence wait 0.0 + queue 0.2 + asr 0.7 + speaker/mt 0.1; audio 1.5s; cut at max length; split on voice change)
+
+[00:00:02] Speaker 1
+HY: է բոսի գիտես։
+EN: It's the boss, you know.
+    (latency 1.5s = silence wait 0.0 + queue 0.9 + asr 0.5 + speaker/mt 0.1; audio 1.8s; cut at max length; split on voice change; voice match 0.03)
+
+[00:00:04] Speaker 2
+HY: իսկ Մաշա ջան, կու համար ինչը կարալինի դղամարդում էչ ռետ վլակ, որ որինակ վերկանաս։
+EN: And Masha, for you, a Karolin man doesn't have the guts to stand up for himself.
+    (latency 3.1s = silence wait 0.0 + queue 1.5 + asr 1.4 + speaker/mt 0.2; audio 6.8s; cut at max length; split on voice change; voice match 0.26)
+
+[00:00:10] Speaker 2
+HY: հենց մեկը ժամազրության ժամարակ թողեց կնաս, ասես ուբ։
+EN: You know, one of them just left a clock on, you're going to be like, "Ub".
+    (latency 1.8s = silence wait 0.6 + queue 0.0 + asr 1.0 + speaker/mt 0.2; audio 3.9s; voice match 0.68)
+
+[00:00:14] Speaker 1
+HY: Հայաստանությունը։ Հայաստանություն։
+EN: Armenia. What is Armenia?
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.1; audio 2.0s; voice match 0.12)
+
+[00:00:16] Speaker 1
+HY: Նու ամեն մորդուս, չու գիտեմ, այդ պիտիտ է նաս, որ իմ ար։
+EN: Every Mordus, I don't know, that's my nose.
+    (latency 1.4s = silence wait 0.0 + queue 0.2 + asr 1.1 + speaker/mt 0.2; audio 4.2s; cut at max length; split on voice change; voice match 0.39)
+
+[00:00:21] Speaker 2
+HY: Քոյնը կող եմ ամեն։
+EN: I'm all over the place.
+    (latency 2.1s = silence wait 0.0 + queue 1.4 + asr 0.6 + speaker/mt 0.1; audio 1.5s; cut at max length; split on voice change; voice match 0.15)
+
+[00:00:22] Speaker 3
+HY: ուհաշիվը չպակի, կամ ասպիտի կիսենք։
+EN: We're not going to close the account, or we're going to split it.
+    (latency 3.1s = silence wait 0.0 + queue 2.1 + asr 0.8 + speaker/mt 0.2; audio 4.3s; cut at max length; split on voice change; voice match 0.22)
+
+[00:00:26] Speaker 3
+HY: թիորակրատ վլագատ է չէ։ Եթե ինքն ահրավիլ է։
+EN: It's not theoretical flattery. If he's a freak.
+    (latency 1.2s = silence wait 0.0 + queue 0.1 + asr 0.9 + speaker/mt 0.1; audio 2.8s; cut at max length; split on voice change; voice match 0.62)
+
+[00:00:29] Speaker 1
+HY: ինիցատիվան ինքն ա սավարել, բայց հետո հոսում է, որ դու պակի վաշը։
+EN: It's the initiation itself, but then it turns out that you're the victim.
+    (latency 2.5s = silence wait 0.0 + queue 1.2 + asr 1.1 + speaker/mt 0.2; audio 4.8s; cut at max length; split on voice change; voice match 0.50)
+
+[00:00:34] Speaker 3
+HY: Հաշվը բերեցին, ասման դե ես այս ես եմ կերը։
+EN: They brought the bill, and they said, "This is who I want to be".
+    (latency 3.6s = silence wait 0.0 + queue 2.5 + asr 0.9 + speaker/mt 0.2; audio 2.5s; cut at max length; split on voice change; voice match 0.54)
+
+[00:00:36] Speaker 1
+HY: Հայաստանում դժվար այդի պատկերացնել, բայց երվի իմինը Հայաստանում այդի շատ ռետ վլագ ուտար։
+EN: In Armenia, it's hard to imagine, but it's very rare in Armenia.
+    (latency 1.9s = silence wait 0.0 + queue 0.2 + asr 1.5 + speaker/mt 0.2; audio 6.8s; cut at max length; split on voice change; voice match 0.78)
+
+[00:00:43] Speaker 1
+HY: Պատ եստը դուք է գրավիրոմ, իստվում ուգ է։ Հան, իստվում ուգ է։
+EN: The wall is you, the wall is you, the wall is you, the wall is you, the wall is you. Han, he's sitting there.
+    (latency 3.3s = silence wait 0.0 + queue 1.9 + asr 1.1 + speaker/mt 0.2; audio 3.3s; cut at max length; split on voice change; voice match 0.52)
+
+[00:00:46] Speaker 2
+HY: ինքսը շատ իջալական լինի, ոմենչ իջալական իջալական պահվացկման, բայց որինակ վրայից գրտինքի հոտ գար։
+EN: It's going to be very idyllic, some kind of idyllic attitude, but it's going to smell like gertin on top of it.
+    (latency 2.4s = silence wait 0.0 + queue 0.1 + asr 2.0 + speaker/mt 0.3; audio 10.0s; cut at max length; voice match 0.76)
+
+[00:00:56] Speaker 2
+HY: — Ես զոտ ուզում ինչի շում եմ!
+EN:  I stink of what I'm breathing!
+    (latency 1.0s = silence wait 0.0 + queue 0.2 + asr 0.7 + speaker/mt 0.1; audio 3.0s; cut at max length; split on voice change; voice match 0.39)
+
+[00:00:59] Speaker 1
+HY: — Ես եմ համար խույա։
+EN: I'm the one for you.
+    (latency 1.6s = silence wait 0.0 + queue 1.0 + asr 0.5 + speaker/mt 0.1; audio 1.8s; cut at max length; split on voice change; voice match 0.14)
+
+[00:01:01] Speaker 4
+HY: Հայուշտյունները։
+EN: It's the volcanoes.
+    (latency 2.5s = silence wait 0.0 + queue 1.6 + asr 0.8 + speaker/mt 0.1; audio 2.8s; cut at max length; split on voice change; voice match 0.24)
+
+[00:01:04] Speaker 5
+HY: Մին է, փող, նի նատ։
+EN: It's money, it's money, it's not money.
+    (latency 3.3s = silence wait 0.0 + queue 2.5 + asr 0.6 + speaker/mt 0.1; audio 2.5s; cut at max length; split on voice change; voice match 0.06)
+
+^C
+Stopping...
+
+Session: 18 lines, latency mean 2.1s, max 3.6s, over 5 s: 0; dropped segments: 0
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ 

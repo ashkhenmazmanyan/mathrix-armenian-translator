@@ -1,0 +1,90 @@
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ pip install faster-whisper
+python -c "
+from faster_whisper import WhisperModel
+m = WhisperModel('tiny', device='cuda', compute_type='float16')
+segs, info = m.transcribe('recordings/both_mic.wav', language='hy')
+print('language:', info.language, '| duration:', round(info.duration, 1), 's')
+for s in segs: print(f'[{s.start:5.1f}-{s.end:5.1f}]', s.text)
+"
+Collecting faster-whisper
+  Downloading faster_whisper-1.2.1-py3-none-any.whl.metadata (16 kB)
+Collecting ctranslate2<5,>=4.0 (from faster-whisper)
+  Downloading ctranslate2-4.8.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting huggingface-hub>=0.21 (from faster-whisper)
+  Downloading huggingface_hub-2.4.0-py3-none-any.whl.metadata (16 kB)
+Collecting tokenizers<1,>=0.13 (from faster-whisper)
+  Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.8 kB)
+Collecting onnxruntime<2,>=1.14 (from faster-whisper)
+  Downloading onnxruntime-1.31.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (5.8 kB)
+Collecting av>=11 (from faster-whisper)
+  Downloading av-19.0.2-cp312-abi3-manylinux_2_28_x86_64.whl.metadata (5.0 kB)
+Collecting tqdm (from faster-whisper)
+  Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+Requirement already satisfied: numpy in ./.venv/lib/python3.12/site-packages (from ctranslate2<5,>=4.0->faster-whisper) (2.5.4)
+Collecting pyyaml<7,>=5.3 (from ctranslate2<5,>=4.0->faster-whisper)
+  Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting flatbuffers (from onnxruntime<2,>=1.14->faster-whisper)
+  Using cached flatbuffers-25.12.19-py2.py3-none-any.whl.metadata (1.0 kB)
+Collecting packaging (from onnxruntime<2,>=1.14->faster-whisper)
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting protobuf>=4.25.8 (from onnxruntime<2,>=1.14->faster-whisper)
+  Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+Collecting click<9.0.0,>=8.4.2 (from huggingface-hub>=0.21->faster-whisper)
+  Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Requirement already satisfied: filelock>=3.10.0 in ./.venv/lib/python3.12/site-packages (from huggingface-hub>=0.21->faster-whisper) (4.2.5)
+Requirement already satisfied: fsspec>=2023.5.0 in ./.venv/lib/python3.12/site-packages (from huggingface-hub>=0.21->faster-whisper) (2026.9.0)
+Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface-hub>=0.21->faster-whisper)
+  Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+Collecting httpx2<3,>=2.0.0 (from huggingface-hub>=0.21->faster-whisper)
+  Downloading httpx2-2.16.0-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: typing-extensions>=4.1.0 in ./.venv/lib/python3.12/site-packages (from huggingface-hub>=0.21->faster-whisper) (4.16.0)
+Collecting anyio>=4.10 (from httpx2<3,>=2.0.0->huggingface-hub>=0.21->faster-whisper)
+  Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting httpcore2==2.16.0 (from httpx2<3,>=2.0.0->huggingface-hub>=0.21->faster-whisper)
+  Downloading httpcore2-2.16.0-py3-none-any.whl.metadata (27 kB)
+Collecting idna>=3.18 (from httpx2<3,>=2.0.0->huggingface-hub>=0.21->faster-whisper)
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface-hub>=0.21->faster-whisper)
+  Downloading truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+Collecting h11>=0.16 (from httpcore2==2.16.0->httpx2<3,>=2.0.0->huggingface-hub>=0.21->faster-whisper)
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Downloading faster_whisper-1.2.1-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 736.6 kB/s  0:00:01
+Downloading ctranslate2-4.8.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (42.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.7/42.7 MB 1.1 MB/s  0:00:38
+Downloading onnxruntime-1.31.1-cp312-cp312-manylinux_2_28_x86_64.whl (23.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.8/23.8 MB 1.0 MB/s  0:00:23
+Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 1.2 MB/s  0:00:02
+Downloading huggingface_hub-2.4.0-py3-none-any.whl (857 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 857.0/857.0 kB 1.0 MB/s  0:00:00
+Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 1.2 MB/s  0:00:03
+Downloading httpx2-2.16.0-py3-none-any.whl (97 kB)
+Downloading httpcore2-2.16.0-py3-none-any.whl (85 kB)
+Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+Downloading av-19.0.2-cp312-abi3-manylinux_2_28_x86_64.whl (35.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.0/35.0 MB 1.1 MB/s  0:00:34
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+Using cached flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Installing collected packages: flatbuffers, truststore, tqdm, pyyaml, protobuf, packaging, idna, hf-xet, h11, click, av, onnxruntime, httpcore2, ctranslate2, anyio, httpx2, huggingface-hub, tokenizers, faster-whisper
+Successfully installed anyio-4.15.1 av-19.0.2 click-8.5.0 ctranslate2-4.8.4 faster-whisper-1.2.1 flatbuffers-25.12.19 h11-0.16.0 hf-xet-1.8.0 httpcore2-2.16.0 httpx2-2.16.0 huggingface-hub-2.4.0 idna-3.20 onnxruntime-1.31.1 packaging-26.3 protobuf-7.36.2 pyyaml-6.0.3 tokenizers-0.23.3 tqdm-4.70.1 truststore-0.10.5
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+  File "/home/ashkhen/Projects/mathrix-armenian-translator/.venv/lib/python3.12/site-packages/faster_whisper/transcribe.py", line 876, in transcribe
+    audio = decode_audio(audio, sampling_rate=sampling_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ashkhen/Projects/mathrix-armenian-translator/.venv/lib/python3.12/site-packages/faster_whisper/audio.py", line 46, in decode_audio
+    with av.open(input_file, mode="r", metadata_errors="ignore") as container:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "av/container/core.py", line 479, in av.container.core.open
+TypeError: open() got an unexpected keyword argument 'metadata_errors'
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ 

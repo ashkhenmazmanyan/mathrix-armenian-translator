@@ -1,0 +1,443 @@
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ python -m live_translate --latency --debug-dir recordings/debug_call3
+Note: default mic 'P9' is a Bluetooth headset; using 'Built-in Audio Analog Stereo' instead to keep the headset in high-quality mode (choose with --mic).
+Loading models: ASR large-v3 (int8_float16), MT nllb-600M, speaker ECAPA (threshold 0.3) ...
+GPU memory free after loading: 1.7 of 5.6 GB
+Listening: Me <- Built-in Audio Analog Stereo
+Listening: call side <- Monitor of P9
+Speak Armenian. Press Ctrl+C to stop.
+
+[00:00:00] Me
+HY: թիվի բանում երձվոց։
+EN: The number line is a chord.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.2; audio 1.9s)
+
+[00:00:02] Speaker 1
+HY: Հանց որ թե արդենք սկսեց աշխատել։
+EN: We've just started working.
+    (latency 1.8s = silence wait 0.6 + queue 0.0 + asr 1.0 + speaker/mt 0.2; audio 3.6s)
+
+[00:00:07] Me
+HY: թե կարանք սանց պաշտոնական պարև ենք իրար, պարև ծեզ։
+EN: We're supposed to be officially hanging out, hanging out.
+    (latency 2.1s = silence wait 0.6 + queue 0.0 + asr 1.1 + speaker/mt 0.3; audio 7.9s)
+
+[00:00:15] Speaker 1
+HY: Ովթեց։
+EN: He jumped.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.2; audio 2.2s; voice match 0.36)
+
+[00:00:15] Me
+HY: Սենց իպեր կննարկում ենք թասքերի մասին։
+EN: So that's where we're going to start with homework.
+    (latency 1.8s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.3; audio 5.5s)
+
+[00:00:22] Me
+HY: Ուզվեմ դուք պատմեք ինչ-որ պան, կապչունի ինչ, կարակ կրքից ինչ-որ հատված կարթակենց իմա։
+EN: I'd like you to tell me something about a gentleman, an ape, a piece of passion in a carpet.
+    (latency 2.6s = silence wait 0.0 + queue 0.0 + asr 1.7 + speaker/mt 0.8; audio 8.0s; cut at max length)
+
+[00:00:32] Speaker 1
+HY: Հես կարդվան։
+EN: It's not easy.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.2; audio 1.6s; voice match 0.11)
+
+[00:00:38] Speaker 2
+HY: ժամանակը մարդու կյանքի ամենաթան կարջեքներից մեկն է, այն անտեսանելի և անշոշապելի, բայց մի և նույն ժամանակ մեծ ազդեցություն։
+EN: Time is one of the shortest stages of a person's life, invisible and unfathomable, but at the same time a tremendous impact.
+    (latency 3.1s = silence wait 0.0 + queue 0.1 + asr 2.4 + speaker/mt 0.6; audio 8.0s; cut at max length; voice match 0.16)
+
+[00:00:46] Speaker 2
+HY: ունի մեր կյանքի յուրականչուր բահի վրա։ Մենք հաճախ չենք նկատում, թե ինչպես են անցնում որերը, շապատներն ու տարիները, մինչև
+EN: It's on a unique stage in our lives. We often don't notice how the seasons, the tents, and the years go by.
+    (latency 3.2s = silence wait 0.0 + queue 0.1 + asr 2.7 + speaker/mt 0.5; audio 8.0s; cut at max length; voice match 0.85)
+
+[00:00:54] Speaker 2
+HY: Մի օր հետ ենք մնայում և հասկանում, որ շատ բան է փոխվել։ Մանգության տարիներին աշխարը մեզ անսահման մեծ ու խողորդավոր է թվում։
+EN: One day, we are left behind and realize that much has changed. In times of chaos, the world seems vast and deceptive.
+    (latency 3.1s = silence wait 0.0 + queue 0.1 + asr 2.7 + speaker/mt 0.3; audio 8.0s; cut at max length; voice match 0.93)
+
+[00:01:02] Speaker 2
+HY: բացահետում, ուրախություն է պաճառում։ Հուրական չուրոր իր հետ բերում է հետաքրքիր իրադարձություններ։ Մենք անհանպեր սպասում ենք ապագային չհասկանալը, որ հենց է։
+EN: It sells joy. A dry season brings with it interesting events. We look forward to not understanding the future, which it is.
+    (latency 3.3s = silence wait 0.0 + queue 0.1 + asr 2.8 + speaker/mt 0.3; audio 8.0s; cut at max length; voice match 0.92)
+
+[00:01:09] Me
+HY: ինձ թվում աշատարագա։
+EN: I think that's a lot more important.
+    (latency 3.4s = silence wait 0.6 + queue 1.9 + asr 0.7 + speaker/mt 0.2; audio 2.2s)
+
+[00:01:10] Speaker 2
+HY: սովորական որելնեն։
+EN: It's a common catch.
+    (latency 3.7s = silence wait 0.6 + queue 2.2 + asr 0.6 + speaker/mt 0.2; audio 2.0s; voice match 0.63)
+
+[00:01:12] Speaker 2
+HY: Մի օր դարնալու մեր ամենաջեր միշողությունները։ Մեծանալու զուգահեր փոխվում է նաև մեր պատկերացումները։
+EN: One day we're going to make our best moves. Growing pairs also change our perceptions.
+    (latency 2.2s = silence wait 0.0 + queue 0.1 + asr 1.9 + speaker/mt 0.2; audio 8.0s; cut at max length; voice match 0.89)
+
+[00:01:20] Speaker 2
+HY: ունենք ավելի լավ հասկանալ մարդկանց գնահատել նրանց վերաբերմունքը և տարբերել անկեղթ խոսքերը դատար խոստումներից։
+EN: We have a better understanding of people, a better appreciation of their attitudes, and a better distinction between dirty words and promises.
+    (latency 2.9s = silence wait 0.0 + queue 0.1 + asr 2.3 + speaker/mt 0.6; audio 8.0s; cut at max length; voice match 0.89)
+
+[00:01:28] Speaker 2
+HY: Հայ։
+EN: Oh, my God.
+    (latency 2.9s = silence wait 0.6 + queue 1.3 + asr 0.8 + speaker/mt 0.2; audio 1.6s; voice match -0.05)
+
+[00:01:26] Me
+HY: արեն որինակ դու էլ կարաս ընթատես։
+EN: Do what you want to do.
+    (latency 3.4s = silence wait 0.6 + queue 1.7 + asr 0.9 + speaker/mt 0.3; audio 4.2s)
+
+[00:01:33] Speaker 1
+HY: Հանդացքում այսինքն հաստատենք, թուն թատենք բանանենք, տենենք ոնց հա։
+EN: I mean, let's put it together, put it down, put it there.
+    (latency 2.5s = silence wait 0.6 + queue 0.1 + asr 1.4 + speaker/mt 0.4; audio 5.8s; voice match 0.56)
+
+[00:01:38] Speaker 1
+HY: Հայց եմ այդ այդ այդ։
+EN: I'm this one.
+    (latency 1.9s = silence wait 0.6 + queue 0.3 + asr 0.8 + speaker/mt 0.2; audio 1.6s; voice match 0.02)
+
+[00:01:39] Me
+HY: Հայլ եղամ այր ատենց։
+EN: I'll be right there.
+    (latency 2.1s = silence wait 0.6 + queue 0.5 + asr 0.7 + speaker/mt 0.3; audio 2.0s)
+
+[00:01:43] Speaker 2
+HY: Շարունեք եմ։
+EN: I'm going to continue.
+    (latency 1.5s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.2; audio 2.5s; voice match 0.44)
+
+[00:01:45] Me
+HY: Մհմ։
+EN: Oh, my God.
+    (latency 1.6s = silence wait 0.6 + queue 0.4 + asr 0.5 + speaker/mt 0.1; audio 1.7s)
+
+[00:01:47] Speaker 2
+HY: Մետնալու զուգահար պոխվում են նաև մեր պատկերացումները։ Մենք սկսում ենք ավելի լեվ հասկանալ մարդկանց, գնահատել նրանց վերաբերմունքը և տարբերել անգյան։
+EN: Our perceptions are also changing. We begin to understand people better, to appreciate their attitudes, and to make a difference.
+    (latency 3.3s = silence wait 0.0 + queue 0.1 + asr 2.9 + speaker/mt 0.4; audio 8.0s; cut at max length; voice match 0.90)
+
+[00:01:55] Speaker 2
+HY: կեղս խոսքերը դատար խոստումներից։ Գանքը սավորեցնում էր ոչ բոլոր մարդիկ են մշտապես մեր կողքին դինելու, ոչ բոլոր ճանապարներն։
+EN: Remove words from promises. It was a discouragement that not all people would be with us all the time, not all roads.
+    (latency 3.0s = silence wait 0.0 + queue 0.1 + asr 2.5 + speaker/mt 0.4; audio 8.0s; cut at max length; voice match 0.89)
+
+[00:02:03] Speaker 2
+HY: հեշտ անցնելու և ոչ բոլոր երազանքնեն են իրականանալու այնպես ինչպես պատկերացրել են։ Սական յուրական չուր դժվարություն կարող է մեզ նրբան։
+EN: It's going to be easy, and not all of your dreams will come true as you've imagined. We can be overwhelmed by our own unique difficulties.
+    (latency 3.3s = silence wait 0.0 + queue 0.1 + asr 2.5 + speaker/mt 0.7; audio 8.0s; cut at max length; voice match 0.93)
+
+[00:02:11] Speaker 2
+HY: սովորսնել, երբ հեմար անհաջողությունն ավելի մեծ։
+EN: You learn when your failure is greater.
+    (latency 2.2s = silence wait 0.6 + queue 0.1 + asr 1.2 + speaker/mt 0.3; audio 2.8s; split on voice change; voice match 0.77)
+
+[00:02:13] Speaker 1
+HY: Քոնսորսը բավական դավաբանանում։
+EN: The consortium is very vocal.
+    (latency 3.2s = silence wait 0.6 + queue 1.6 + asr 0.9 + speaker/mt 0.2; audio 2.9s; split on voice change; voice match 0.50)
+
+[00:02:16] Me
+HY: Հա, չէ, տեկստով գինում ա, հասկանում ա։
+EN: Oh, no, it's texting, you know.
+    (latency 1.9s = silence wait 0.6 + queue 0.0 + asr 1.0 + speaker/mt 0.3; audio 4.2s)
+
+[00:02:22] Me
+HY: ովա խոսում, ով չի խոսում։
+EN: who speaks, who doesn't.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.2; audio 3.6s)
+
+[00:02:26] Speaker 3
+HY: Հայստված այդ այդ այդ
+EN: It's been that way.
+    (latency 1.2s = silence wait 0.0 + queue 0.1 + asr 0.7 + speaker/mt 0.3; audio 2.0s; cut at max length; split on voice change; voice match 0.24)
+
+[00:02:28] Speaker 1
+HY: Հինքը հասկանում է, ահագին տարբերում է, ուղակի պահի տագն է, որ հիմա ստեղ ընթատեցի։
+EN: The old one understands, it makes a big difference, it's the exact moment that I've just clicked.
+    (latency 3.2s = silence wait 0.0 + queue 1.2 + asr 1.6 + speaker/mt 0.4; audio 6.0s; cut at max length; split on voice change; voice match 0.78)
+
+[00:02:34] Speaker 1
+HY: ինչին կահագին էլի խարն ես տեկստերը։
+EN: I don't know what you're going to wear.
+    (latency 1.8s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.2; audio 3.5s; voice match 0.77)
+
+[00:02:42] Me
+HY: համաձայն եմ, բայց իստում է խնդիր արդեն իմ համակարքի մեջ չի ես
+EN: I agree, but there's a problem.
+    (latency 1.8s = silence wait 0.0 + queue 0.0 + asr 1.3 + speaker/mt 0.4; audio 8.0s; cut at max length)
+
+[00:02:51] Me
+HY: Վիսպրիխն թիր նովորշ չգիտմ։
+EN: I don't know about the whiskey.
+    (latency 1.7s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.2; audio 3.2s)
+
+[00:02:54] Me
+HY: Քարաս չգիտեմ ինչ-որ երկար բանել, դու խոսաս կամ հիմա ես փորձեմ ինչ-որ գիրկ գտնեմ, պատվեմ որինակ թե...
+EN: I don't know how to do anything long, you talk, or I'll try to find a clutch, like...
+    (latency 2.6s = silence wait 0.0 + queue 0.0 + asr 2.0 + speaker/mt 0.6; audio 8.0s; cut at max length)
+
+[00:03:02] Me
+HY: ինչքան եմ հոգնել ես աստրակից։
+EN: I'm so tired of the stars.
+    (latency 1.7s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.2; audio 2.9s)
+
+[00:03:05] Speaker 3
+HY: Մենք այդ այդ այդ այդ
+EN: We're this this this this
+    (latency 1.5s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.2; audio 1.4s; voice match 0.15)
+
+[00:03:07] Speaker 1
+HY: Քարա սորներկ դու երս սկսես ինչ-որ պատմեց հասկանանք, ինչ-որ էս բավլ է, ինչ-էս ար է, ինչ-քան էս հոգնեց գիրակի։
+EN: I'll tell you what I'm doing, what I've done, how tired I've been.
+    (latency 3.0s = silence wait 0.0 + queue 0.1 + asr 2.2 + speaker/mt 0.7; audio 8.0s; cut at max length; voice match 0.79)
+
+[00:03:15] Speaker 3
+HY: Հայ։
+EN: Oh, my God.
+    (latency 3.5s = silence wait 0.6 + queue 1.8 + asr 0.8 + speaker/mt 0.2; audio 1.2s; voice match 0.20)
+
+[00:03:16] Me
+HY: Հայո, այժը միսկույն կվերջացնեմ, սրանից ողիկ մի տարի առաջ մայիս ամսին կենողը կալիսը մի տարի առաջ մայիս ամսին կենողը կալիսը մի տարի առաջ մայիս ամսին։
+EN: Well, I'm going to put an end to the fever, and then the tragedy of a year ago, in May, a year ago in May, and a year later in May.
+    (latency 3.7s = silence wait 0.0 + queue 0.0 + asr 3.0 + speaker/mt 0.7; audio 8.0s; cut at max length)
+
+[00:03:24] Me
+HY: մեզ մոտ ու տատիս ասում է, թե իր գործն այստեղ պոլորովին վերջացել է, և թե պետք է էլի մի տարով մոսկվա գնա։
+EN: My grandmother says that her job here is completely over, and that I have to go to Moscow for another year.
+    (latency 2.7s = silence wait 0.0 + queue 0.0 + asr 2.1 + speaker/mt 0.6; audio 8.0s; cut at max length)
+
+[00:03:32] Me
+HY: որի մեջից էր։
+EN: which he was a part of.
+    (latency 1.8s = silence wait 0.6 + queue 0.4 + asr 0.6 + speaker/mt 0.1; audio 2.3s)
+
+[00:03:42] Speaker 3
+HY: Հում հում։
+EN: It's raw.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.2; audio 1.6s; voice match 0.20)
+
+[00:03:38] Me
+HY: կիշտ ա, դաստեղ սկիս պիտակը կիշերներ, սորդ մեկը լսի մեր խոսակսությունը, կմտացի բանը, կաշալ։
+EN: That's right, the big badge marks, the next person hears us talking, he gets the thing, he scratches.
+    (latency 2.5s = silence wait 0.0 + queue 0.0 + asr 1.9 + speaker/mt 0.6; audio 8.0s; cut at max length)
+
+[00:03:46] Me
+HY: Քայս այդ կոլի ենք նդուտ։
+EN: That's what we're all about.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.2; audio 4.2s)
+
+[00:03:50] Speaker 1
+HY: Ով ինչից ասես, ինչից հասրեց խոսած խարը, լիժբա ասկանանք, ոնց հաղարշխատում ես համակարքը։
+EN: Whoever says what, whoever gets the word from the evil one, let us say in tongue-in-cheek, that you prevail against the unity.
+    (latency 2.5s = silence wait 0.0 + queue 0.1 + asr 1.9 + speaker/mt 0.6; audio 8.0s; cut at max length; voice match 0.78)
+
+[00:03:58] Me
+HY: Հա, կարանք եվս մի ռոպ էլ ձգենք ինչ-որ շմիր ձև, այդ էլ կարած դու ինչ-որ երկարբան խոսասար են։
+EN: Well, let's make a rope and we'll pull it out in a smooth way, and you're a long-winded speaker.
+    (latency 2.7s = silence wait 0.0 + queue 0.0 + asr 2.2 + speaker/mt 0.5; audio 8.0s; cut at max length)
+
+[00:04:09] Speaker 1
+HY: ես կարամ հայ ինչ-որ բան խոսամ։
+EN: I could say something.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.2; audio 3.5s; voice match 0.73)
+
+[00:04:17] Speaker 1
+HY: ինչ հոսամ հայես բայց չել ես։
+EN: I mean, I mean, you know, you've been through a lot, but you haven't.
+    (latency 1.8s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.4; audio 2.6s; voice match 0.75)
+
+[00:04:17] Me
+HY: Հայ, ես չեմ կասկածում, դու կարաս ինչ-որ փոքր բանն էլ դանց լավ ծավալում սարքես, ես հավատում եմ էլ, իքով...
+EN: Hey, I don't doubt you'll want to do anything small in a good volume, I believe, too.
+    (latency 3.0s = silence wait 0.0 + queue 0.0 + asr 2.2 + speaker/mt 0.8; audio 8.0s; cut at max length)
+
+[00:04:26] Me
+HY: միտք ձևակերպելու կարողությոնը։
+EN: The ability to shape a thought.
+    (latency 1.9s = silence wait 0.6 + queue 0.0 + asr 1.0 + speaker/mt 0.3; audio 3.7s)
+
+[00:04:31] Speaker 1
+HY: Նա, սպասեք։
+EN: She, wait.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.3; audio 1.7s; voice match 0.51)
+
+[00:04:32] Speaker 1
+HY: Վերջի բանից պատմեմ։
+EN: Let me tell you one last thing.
+    (latency 1.7s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.3; audio 2.5s; voice match 0.72)
+
+[00:04:36] Speaker 1
+HY: Համ։
+EN: That's right.
+    (latency 1.5s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.3; audio 1.9s; voice match 0.48)
+
+[00:04:38] Speaker 1
+HY: Համգիսվեմ համեպատմ եմ փորձհարությունից ես, վերջեր ես որոշեցի շարոնակեմ իմ կրթական ճանապարու ու դրա համար ընտրեցի միատ համար սանիքում։
+EN: I'm an experienced psychopath, so I finally decided to list my educational journey, and that's why I chose a number on the couch.
+    (latency 4.1s = silence wait 0.0 + queue 0.1 + asr 3.1 + speaker/mt 0.9; audio 8.0s; cut at max length; voice match 0.82)
+
+[00:04:46] Speaker 1
+HY: կուրս կուրսերայով ճոն հոպքինսի համար սանից, ինգ շատ ուժեղ, կիտական, լավ, վիճակագրական ու կիրար հապանը հանդրան։
+EN: In the course of John Hopkins' career, he's a very strong, philosophical, good, statistical, and quick-witted man.
+    (latency 3.6s = silence wait 0.0 + queue 0.1 + asr 2.6 + speaker/mt 0.9; audio 8.0s; cut at max length; voice match 0.82)
+
+[00:04:54] Speaker 1
+HY: այն առողջապավության մեջ գիրարական կուրս էր։
+EN: It was a major in health care.
+    (latency 2.1s = silence wait 0.6 + queue 0.0 + asr 1.2 + speaker/mt 0.3; audio 3.9s; voice match 0.76)
+
+[00:04:58] Speaker 1
+HY: այդ կորսը սկսեցի անցնել, իրան ընդհանոր ինքը թանք չեր, բժարեցի 30 հազար դրամ, չորս կորս էր,
+EN: I started to take this course, it wasn't worth it at all, I made $30,000, it was four losses.
+    (latency 3.0s = silence wait 0.0 + queue 0.1 + asr 2.2 + speaker/mt 0.8; audio 8.0s; cut at max length; voice match 0.84)
+
+[00:05:06] Speaker 1
+HY: հորսկությանասներությունց հետո հերթով սկսած միկայագրողական վիճակագրություննից, վիճակագրական կոնսեպներից, դեսկրի։
+EN: I'm going to start with statistical statistics, statistical concepts, and then I'll go back to the drawing board.
+    (latency 3.8s = silence wait 0.0 + queue 0.1 + asr 2.8 + speaker/mt 0.9; audio 8.0s; cut at max length; voice match 0.86)
+
+[00:05:14] Speaker 1
+HY: անալիզներից, հիպոտեզներից լուգումից միջև ռեգրեսյոն անալիզներ ու բազմաճապ ռեգրեսյոն անալիզներ։
+EN: It's the regression analysis between the analyses, the hypotheses, the checks, and the repeated regression analysis.
+    (latency 3.3s = silence wait 0.0 + queue 0.1 + asr 2.3 + speaker/mt 0.9; audio 8.0s; cut at max length; voice match 0.83)
+
+[00:05:22] Speaker 1
+HY: նիկեն սա վիճակագրության։
+EN: Nick, this is statistics.
+    (latency 1.5s = silence wait 0.6 + queue 0.1 + asr 0.7 + speaker/mt 0.1; audio 3.2s; voice match 0.83)
+
+[00:05:25] Speaker 1
+HY: կուրսան մողջանց հա
+EN: I'm going to take a full course.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.2; audio 2.8s; voice match 0.65)
+
+[00:05:28] Speaker 1
+HY: ու բանը դրանից տացա սերտիվիկատ, որ ես արդհեն որպես կենսավիճակագի շատ լավ մասնագետա։
+EN: And the thing is, I'm certified to be a very good quality of life specialist.
+    (latency 1.7s = silence wait 0.0 + queue 0.1 + asr 1.5 + speaker/mt 0.2; audio 8.0s; cut at max length; voice match 0.89)
+
+[00:05:36] Speaker 1
+HY: Հայց եմ։
+EN: I have a request.
+    (latency 1.3s = silence wait 0.6 + queue 0.1 + asr 0.4 + speaker/mt 0.1; audio 1.6s; voice match 0.49)
+
+[00:05:38] Me
+HY: Հա, այդ վերջերս, որ լինկտինով գցել էի, իր այդ էր, հա, մոսոր չէ հասկացա, ինչ էի գցել, բայց տեսա, որ...
+EN: Uh, the last time I threw a linkin, it was his, uh, I didn't quite understand what I threw, but I saw that...
+    (latency 2.0s = silence wait 0.0 + queue 0.0 + asr 1.7 + speaker/mt 0.3; audio 8.0s; cut at max length)
+
+[00:05:46] Me
+HY: լամբան էր գծել։
+EN: He drew a lamp.
+    (latency 1.2s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.1; audio 2.0s)
+
+[00:05:45] Speaker 1
+HY: Նայ, համել կուրսերի բանն եմ կիսվել համել ես երեկ հոդված օվյուզ յու էս ու ապակքնեքթների։
+EN: Look, I've been sharing a little bit about the courses, and I've had a little bit of an overview of yesterday's article and the glass subtitles.
+    (latency 2.0s = silence wait 0.0 + queue 0.1 + asr 1.5 + speaker/mt 0.4; audio 8.0s; cut at max length; voice match 0.86)
+
+[00:05:53] Speaker 3
+HY: Հայսպես այդ այդ այդ այդ այդ
+EN: That's the way it is.
+    (latency 1.7s = silence wait 0.6 + queue 0.2 + asr 0.7 + speaker/mt 0.2; audio 1.8s; voice match 0.22)
+
+[00:05:55] Speaker 1
+HY: Մի դրանք էլ եմ կտա։
+EN: I'll give them to you.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 1.9s; voice match 0.61)
+
+[00:05:58] Me
+HY: այստում այնց 45 է, մի հատ պորձենք ստոպտանք էս, շնորակարծում բոլորին։
+EN: So let's try one of these, and we're all going to do it.
+    (latency 1.5s = silence wait 0.0 + queue 0.0 + asr 1.3 + speaker/mt 0.2; audio 8.0s; cut at max length)
+
+[00:06:06] Me
+HY: Ձեր ներդրման համար։ Ես եթե անցնեմ գործի։
+EN: For your investment. I would if I went to work.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.1; audio 5.5s)
+
+[00:06:10] Speaker 1
+HY: Հույս ունենամ էլի լավից վատիս նորմալ արելամ։
+EN: I'm hoping to do better or worse.
+    (latency 1.7s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.2; audio 5.7s; voice match 0.72)
+
+[00:06:14] Me
+HY: Հա, վրոծի ոնց ենց կարթում էլի օգեյ է, ես առաջվա թեստերը, որ անում էի վիջոյով կամ սենց սովորականց...
+EN: Yeah, well, I'm just trying to figure out what I'm going to do. I've been taking a quiz or something.
+    (latency 2.3s = silence wait 0.0 + queue 0.0 + asr 2.0 + speaker/mt 0.3; audio 8.0s; cut at max length)
+
+[00:06:21] Speaker 4
+HY: Հանդությունները այդ այդ այդ։
+EN: The patterns are this one.
+    (latency 2.5s = silence wait 0.6 + queue 1.1 + asr 0.7 + speaker/mt 0.1; audio 2.0s; voice match 0.17)
+
+[00:06:22] Me
+HY: էլինույնց է վերինքը։
+EN: It's the same at the top.
+    (latency 2.1s = silence wait 0.6 + queue 0.7 + asr 0.7 + speaker/mt 0.1; audio 2.4s)
+
+[00:06:27] Me
+HY: ու երևի չգիտմ։
+EN: And I guess I don't know.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.1; audio 2.4s)
+
+[00:06:30] Me
+HY: Միրը վելավով։
+EN: The mir with the wire.
+    (latency 1.2s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.1; audio 1.4s)
+
+[00:06:32] Speaker 3
+HY: Մհում։
+EN: It's a mystery.
+    (latency 1.2s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.1; audio 1.8s; voice match 0.26)
+
+[00:06:32] Me
+HY: ես եթե գործի անցնեմ, բոլորըդ ունեք ձեր բաժին, ինչեն ասում։
+EN: If I do, you all have your share of what they say.
+    (latency 1.9s = silence wait 0.6 + queue 0.0 + asr 1.1 + speaker/mt 0.2; audio 7.3s)
+
+[00:06:39] Speaker 2
+HY: Ներ դրում։
+EN: Put it in.
+    (latency 1.1s = silence wait 0.6 + queue 0.0 + asr 0.4 + speaker/mt 0.1; audio 1.5s; voice match 0.47)
+
+[00:06:40] Me
+HY: Չան։
+EN: They don't.
+    (latency 1.1s = silence wait 0.6 + queue 0.0 + asr 0.4 + speaker/mt 0.1; audio 1.3s)
+
+[00:06:40] Speaker 3
+HY: Ներդրում։
+EN: It's an investment.
+    (latency 1.1s = silence wait 0.6 + queue 0.0 + asr 0.4 + speaker/mt 0.1; audio 2.1s; voice match 0.39)
+
+[00:06:41] Me
+HY: չեն վորջնվեր են տալիս։
+EN: They don't give you a break.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 2.4s)
+
+[00:06:46] Me
+HY: Մաղարիչ։
+EN: It's a charm.
+    (latency 1.2s = silence wait 0.6 + queue 0.0 + asr 0.4 + speaker/mt 0.1; audio 1.6s)
+
+[00:06:49] Me
+HY: Հայք եմ այդ այդ։
+EN: I'm the father of that.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 1.9s)
+
+^C
+Stopping...
+[00:06:51] Me
+HY: այսքն
+EN: It's the same thing.
+    (latency 1.1s = silence wait 0.6 + queue 0.0 + asr 0.4 + speaker/mt 0.1; audio 1.5s)
+
+
+Session: 86 lines, latency mean 2.2s, max 4.1s, over 5 s: 0; dropped segments: 0
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ 

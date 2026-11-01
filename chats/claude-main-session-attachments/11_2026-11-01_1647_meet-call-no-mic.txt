@@ -1,0 +1,152 @@
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ git add live_translate/ scripts/
+git commit -m "Speaker labels: ECAPA + online clustering, length-dependent threshold (0.30-0.50), confident-only updates, voice-change split; NLLB repetition guard; max segment 8 s"
+[main dc7692a] Speaker labels: ECAPA + online clustering, length-dependent threshold (0.30-0.50), confident-only updates, voice-change split; NLLB repetition guard; max segment 8 s
+ 8 files changed, 387 insertions(+), 31 deletions(-)
+ create mode 100644 scripts/test_speaker_change.py
+ create mode 100644 scripts/test_speaker_embeddings.py
+ create mode 100644 scripts/test_speaker_labeling.py
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ python -m live_translate --no-mic --latency
+Loading models: ASR large-v3 (int8_float16), MT nllb-600M, speaker ECAPA (threshold 0.3) ...
+Listening: call side <- Monitor of P9
+Speak Armenian. Press Ctrl+C to stop.
+
+[00:00:02] Speaker 1
+HY: Հայստված այդ այդ այդ։
+EN: That's right.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.2; audio 1.3s)
+
+[00:00:32] Speaker 2
+HY: Միջիս բիտի խոսանք։
+EN: We'll talk between us.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.3; audio 2.5s; voice match 0.03)
+
+[00:00:34] Speaker 1
+HY: Համ։
+EN: That's right.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.2; audio 2.3s; voice match 0.46)
+
+[00:00:37] Speaker 1
+HY: Հուհին։
+EN: What is it?
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.2; audio 2.1s; voice match 0.42)
+
+[00:00:41] Speaker 3
+HY: Նեն այդ քոմ մոտտու փորձմես անգլերին թարգման ես, թե հիմա ոնց։
+EN: Now, if you're going to try to translate it into English, what are you going to do?
+    (latency 2.7s = silence wait 0.6 + queue 0.1 + asr 1.5 + speaker/mt 0.5; audio 4.8s; split on voice change; voice match 0.13)
+
+[00:00:46] Speaker 1
+HY: Հայաստված այդ այդ։
+EN: Armed with that.
+    (latency 3.6s = silence wait 0.6 + queue 2.1 + asr 0.7 + speaker/mt 0.2; audio 2.2s; split on voice change; voice match 0.38)
+
+[00:00:53] Speaker 3
+HY: Տու ինչ լեզ ավես ուզում լեսես հիմա, ահոնքերն ակամ ոտգալու թե հայերն։
+EN: Whatever language you want to leave now, you're going to have to kill the Armenians.
+    (latency 2.5s = silence wait 0.6 + queue 0.1 + asr 1.4 + speaker/mt 0.4; audio 5.0s; voice match 0.67)
+
+[00:01:19] Speaker 3
+HY: Ոս մեն մասկանամ։
+EN: I'm going to be a part of it.
+    (latency 1.6s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.2; audio 1.9s; voice match 0.63)
+
+[00:01:25] Speaker 3
+HY: Մի հարց էր տամ, ո՞նց անցափ թրիպէտ, ո՞նց մի լացին։
+EN: I was going to ask, how did the trippets pass, how did they not cry?
+    (latency 2.2s = silence wait 0.6 + queue 0.1 + asr 1.2 + speaker/mt 0.4; audio 7.7s; voice match 0.60)
+
+[00:01:32] Speaker 3
+HY: ես ետեի հետավում։
+EN: I was going backwards.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.1; audio 2.1s; voice match 0.53)
+
+[00:01:37] Speaker 3
+HY: դանյան մեզ թերեն թանուջ։
+EN: Danish language to us.
+    (latency 1.5s = silence wait 0.6 + queue 0.0 + asr 0.7 + speaker/mt 0.2; audio 3.3s; voice match 0.74)
+
+[00:01:40] Speaker 3
+HY: Մինը անսյություն։
+EN: The other is insensibility.
+    (latency 1.5s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.2; audio 1.6s; voice match 0.62)
+
+[00:01:54] Speaker 1
+HY: Մհում։
+EN: It's a mystery.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.2; audio 1.4s; voice match 0.39)
+
+[00:01:57] Speaker 3
+HY: Հաղմինք վրացել է սիսկի։
+EN: The embryo has burned to the ground.
+    (latency 1.7s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.3; audio 3.2s; voice match 0.62)
+
+[00:02:00] Speaker 3
+HY: իմ վիզան մարժեցին ու ասիմ, որ դու էրեխա չունաս, կաս մեր երկիր ու կմրնաս ԱՄերիկայում։
+EN: My visa was revoked, and I said, "You don't have children, you're our country and you're going to die in America".
+    (latency 2.9s = silence wait 0.6 + queue 0.1 + asr 1.7 + speaker/mt 0.6; audio 6.5s; voice match 0.67)
+
+[00:02:09] Speaker 3
+HY: Հա, ինձ հենց էտ կետով է մերժլեցին, 2014-ի բեկետներ իրանց, ասմա բավարարապացության։
+EN: Well, I've just been denied the 2014 wickets, as a matter of fact.
+    (latency 2.2s = silence wait 0.0 + queue 0.1 + asr 1.6 + speaker/mt 0.4; audio 8.0s; cut at max length; voice match 0.77)
+
+[00:02:17] Speaker 3
+HY: Հայաստան։ Կաց շելոր հետքի գաս հայաստան։
+EN: This is Armenia. He left behind a trail to Armenia.
+    (latency 1.9s = silence wait 0.6 + queue 0.0 + asr 1.0 + speaker/mt 0.3; audio 2.9s; voice match 0.65)
+
+[00:02:24] Speaker 3
+HY: Չէ, ասմա, ասեցի բա, ինչ պետք այլ ներկայացնեն։ Ես կամ պաստաթղթերի հետ ասեց։
+EN: No, no, no. I said, "Well, what else do you want?" I said with the papers.
+    (latency 2.7s = silence wait 0.6 + queue 0.1 + asr 1.7 + speaker/mt 0.4; audio 6.3s; voice match 0.80)
+
+[00:02:30] Speaker 3
+HY: պետք է իրեխա ունեն այդ, որ վստահ լնենք, որ հետ գլաս է։
+EN: You have to have something to make sure it's back glass.
+    (latency 2.2s = silence wait 0.6 + queue 0.1 + asr 1.2 + speaker/mt 0.3; audio 4.6s; voice match 0.75)
+
+[00:02:39] Speaker 3
+HY: ես արհասարակ ինձ մի ուտ հոր էր պետք, բայց իրանք շատ էր կարճահամանակով են տալի, կարճահամանակով չունեն կամ հինգ տալի։
+EN: I actually needed a meal, but they were very short-term, they didn't have a short-term or five-term.
+    (latency 2.7s = silence wait 0.0 + queue 0.1 + asr 2.2 + speaker/mt 0.4; audio 8.0s; cut at max length; voice match 0.71)
+
+[00:02:47] Speaker 3
+HY: որովենդալի կամտաս։
+EN: I'm going to tell you what's going on.
+    (latency 2.5s = silence wait 0.6 + queue 0.9 + asr 0.6 + speaker/mt 0.4; audio 1.8s; voice match 0.54)
+
+[00:03:01] Speaker 1
+HY: Մհմ։
+EN: Oh, my God.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.2; audio 1.4s; voice match 0.40)
+
+[00:03:11] Speaker 1
+HY: Մյույթյուն։
+EN: It's a mystery.
+    (latency 1.4s = silence wait 0.6 + queue 0.0 + asr 0.5 + speaker/mt 0.2; audio 1.4s; voice match 0.36)
+
+[00:03:13] Speaker 3
+HY: էս չմար կարթում ու չի էր համ։
+EN: I didn't miss it and it didn't taste good.
+    (latency 1.7s = silence wait 0.6 + queue 0.0 + asr 0.8 + speaker/mt 0.2; audio 3.1s; voice match 0.47)
+
+[00:03:22] Speaker 2
+HY: Մամ իրոպը։
+EN: Mother Yoruba.
+    (latency 1.3s = silence wait 0.6 + queue 0.0 + asr 0.6 + speaker/mt 0.2; audio 2.0s; voice match 0.35)
+
+[00:03:24] Speaker 2
+HY: Նոր ես մաթեմ էի անում, ինչ լավազանգեցիք չէի հասկանում ոչ մի բան։
+EN: I was just doing the math, and I didn't understand what you were saying.
+    (latency 2.4s = silence wait 0.6 + queue 0.1 + asr 1.4 + speaker/mt 0.3; audio 5.0s; voice match 0.63)
+
+[00:03:45] Speaker 2
+HY: Մաթեմ էի անում, աշվիչ ես պիճացով։
+EN: I was doing math, you were a math teacher.
+    (latency 1.8s = silence wait 0.6 + queue 0.0 + asr 0.9 + speaker/mt 0.2; audio 3.2s; voice match 0.73)
+
+^C
+Stopping...
+
+Session: 27 lines, latency mean 2.0s, max 3.6s, over 5 s: 0; dropped segments: 0
+(.venv) ashkhen@mazmanyan-lnx:~/Projects/mathrix-armenian-translator$ 
