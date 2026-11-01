@@ -41,7 +41,26 @@ class Worker(threading.Thread):
             else:
                 parts = [(0, seg.audio)]
             for offset, audio in parts:
-                self.handle(seg, offset, audio, split=len(parts) > 1)
+                self.handle_safely(seg, offset, audio, split=len(parts) > 1)
+
+    def handle_safely(self, seg, offset, audio, split):
+        """One failing phrase must never stop the session (a CUDA out-of-memory error
+        while a Google Meet call was using the GPU killed the worker in a test)."""
+        for attempt in (1, 2):
+            try:
+                self.handle(seg, offset, audio, split)
+                break
+            except Exception as e:                      # noqa: BLE001
+                oom = "out of memory" in str(e).lower()
+                torch.cuda.empty_cache()
+                if oom and attempt == 1:
+                    continue                            # retry once after freeing cached memory
+                self.dropped += 1
+                print(f"    (skipped a {seg.source} phrase: {type(e).__name__}: {e})\n", flush=True)
+                break
+        # Return memory cached by PyTorch (translation, speaker model) so the Whisper
+        # engine, which has its own allocator, can use it.
+        torch.cuda.empty_cache()
 
     def handle(self, seg, offset, audio, split):
         t0 = time.monotonic()
@@ -106,6 +125,12 @@ def run(args):
     asr.warmup()
     mt.warmup()
     speakers.warmup()
+    torch.cuda.empty_cache()
+    free, total = torch.cuda.mem_get_info()
+    print(f"GPU memory free after loading: {free / 2**30:.1f} of {total / 2**30:.1f} GB", flush=True)
+    if free < 1.0 * 2**30:
+        print("Warning: little GPU memory left. Close GPU-heavy apps or disable hardware "
+              "acceleration in the browser used for the call.", flush=True)
 
     stop = threading.Event()
     segments = queue.Queue()
@@ -137,6 +162,9 @@ def run(args):
     try:
         while not stop.is_set():
             time.sleep(0.5)
+            if not worker.is_alive():
+                print("Error: the processing thread stopped unexpectedly.", flush=True)
+                break
     except KeyboardInterrupt:
         pass
     stop.set()

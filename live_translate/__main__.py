@@ -39,6 +39,9 @@ def parse_args():
 
 def main():
     args = parse_args()
+    # Let PyTorch grow/shrink its GPU memory blocks instead of fragmenting them;
+    # GPU memory is tight (6 GB shared with the desktop and the browser running the call).
+    os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
     if not args.download_models:
         # Run fully offline: models must already be in the local cache.
         os.environ.setdefault("HF_HUB_OFFLINE", "1")
