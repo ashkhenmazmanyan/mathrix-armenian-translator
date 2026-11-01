@@ -30,6 +30,8 @@ def parse_args():
     p.add_argument("--no-speaker-split", action="store_true",
                    help="don't split system-audio phrases where the voice changes")
     p.add_argument("--latency", action="store_true", help="show a latency breakdown under each line")
+    p.add_argument("--debug-dir", help="save the raw audio streams and every phrase (WAV + log) "
+                                       "here, to check afterwards what was missed")
     p.add_argument("--download-models", action="store_true",
                    help="download the selected models (needs internet) and exit")
     return p.parse_args()

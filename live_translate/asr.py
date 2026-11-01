@@ -9,6 +9,7 @@ class Transcriber:
     def __init__(self, model="large-v3", compute_type="int8_float16", beam_size=5):
         self.model = WhisperModel(model, device="cuda", compute_type=compute_type)
         self.beam_size = beam_size
+        self.last_removed = ""     # text dropped by the no-speech filter (for --debug-dir)
 
     def transcribe(self, audio):
         segments, _ = self.model.transcribe(
@@ -16,7 +17,9 @@ class Transcriber:
             condition_on_previous_text=False,   # don't let one bad phrase poison the next
             without_timestamps=True)
         # Drop parts Whisper itself considers non-speech (a common source of hallucinations).
+        segments = list(segments)
         kept = [s for s in segments if not (s.no_speech_prob > 0.6 and s.avg_logprob < -1.0)]
+        self.last_removed = " ".join(s.text.strip() for s in segments if s not in kept).strip()
         return remove_repeats(" ".join(s.text.strip() for s in kept).strip())
 
     def warmup(self):

@@ -1,8 +1,10 @@
 """Wiring: audio threads -> segment queue -> one GPU worker -> terminal."""
+import os
 import queue
 import threading
 import time
 import warnings
+import wave
 
 import numpy as np
 import torch
@@ -20,8 +22,9 @@ class Worker(threading.Thread):
     """Processes segments one at a time (the GPU is shared), oldest first."""
 
     def __init__(self, segments, asr, mt, speakers, session_start, stop, show_latency,
-                 split_speakers=True):
+                 split_speakers=True, debug_dir=None):
         super().__init__(name="worker", daemon=True)
+        self.debug_dir, self.count = debug_dir, 0
         self.split_speakers = split_speakers
         self.segments, self.asr, self.mt, self.speakers = segments, asr, mt, speakers
         self.session_start, self.stop, self.show_latency = session_start, stop, show_latency
@@ -44,6 +47,13 @@ class Worker(threading.Thread):
         t0 = time.monotonic()
         hy = self.asr.transcribe(audio)
         t1 = time.monotonic()
+        self.count += 1
+        t_rel = seg.start + offset / 16000 - self.session_start
+        if self.debug_dir:
+            write_wav(os.path.join(self.debug_dir, f"{self.count:03d}_{seg.source}_{int(t_rel):04d}s.wav"), audio)
+            with open(os.path.join(self.debug_dir, "log.txt"), "a", encoding="utf-8") as f:
+                f.write(f"{self.count:03d} {seg.source} t={t_rel:.1f}s audio={len(audio)/16000:.1f}s "
+                        f"HY={hy!r} removed_by_filter={self.asr.last_removed!r}\n")
         if not hy or not has_armenian(hy):
             self.dropped += 1
             if self.show_latency:
@@ -65,8 +75,15 @@ class Worker(threading.Thread):
                       f" + speaker/mt {t2 - t1:.1f}; audio {len(audio) / 16000:.1f}s"
                       + ("; cut at max length" if seg.forced else "")
                       + ("; split on voice change" if split else "")
-                      + (f"; voice match {sim:.2f}" if sim is not None else ""))
-        print_segment(seg.start + offset / 16000 - self.session_start, speaker, hy, en, detail)
+                      + (f"; voice match {sim:.2f}" if sim is not None else "")
+                      + (f"; filter removed: {self.asr.last_removed!r}" if self.asr.last_removed else ""))
+        print_segment(t_rel, speaker, hy, en, detail)
+
+
+def write_wav(path, audio):
+    with wave.open(path, "wb") as f:
+        f.setnchannels(1); f.setsampwidth(2); f.setframerate(16000)
+        f.writeframes((np.clip(audio, -1, 1) * 32767).astype(np.int16).tobytes())
 
 
 def run(args):
@@ -93,14 +110,25 @@ def run(args):
     stop = threading.Event()
     segments = queue.Queue()
     session_start = time.monotonic()
+    if args.debug_dir:
+        os.makedirs(args.debug_dir, exist_ok=True)
     worker = Worker(segments, asr, mt, speakers, session_start, stop, args.latency,
-                    split_speakers=not args.no_speaker_split)
+                    split_speakers=not args.no_speaker_split, debug_dir=args.debug_dir)
     worker.start()
 
-    threads = []
+    threads, raw_files = [], []
     for name, device in sources:
         seg = Segmenter(name, segments.put, min_silence=args.min_silence, max_len=args.max_segment)
-        t = AudioSource(name, device, seg.process, stop)
+        on_block = seg.process
+        if args.debug_dir:      # also keep the whole stream, to compare with what was printed
+            raw = wave.open(os.path.join(args.debug_dir, f"stream_{name}.wav"), "wb")
+            raw.setnchannels(1); raw.setsampwidth(2); raw.setframerate(16000)
+            raw_files.append(raw)
+
+            def on_block(block, t, seg=seg, raw=raw):
+                raw.writeframes((np.clip(block, -1, 1) * 32767).astype(np.int16).tobytes())
+                seg.process(block, t)
+        t = AudioSource(name, device, on_block, stop)
         t.start()
         threads.append(t)
         print(f"Listening: {'Me' if name == 'mic' else 'call side'} <- {device.name}")
@@ -117,6 +145,8 @@ def run(args):
     for t in threads:
         t.join(timeout=2.0)
     worker.join(timeout=10.0)
+    for raw in raw_files:
+        raw.close()
     for t in threads:
         if t.error:
             print(f"Audio error in {t.name}: {t.error}")

@@ -27,10 +27,28 @@ def _monitor_of_default_output():
     raise SystemExit(f"No monitor source found for output '{speaker.name}'. Run --list-devices.")
 
 
+def _is_bluetooth(device):
+    return "bluez" in device.id.lower()
+
+
+def _default_microphone():
+    # Recording from a Bluetooth headset's microphone switches the headset into its
+    # low-quality "call" profile: in a test the mic stream lost everything above 4 kHz
+    # (telephone quality), which wrecked recognition. Prefer a wired/built-in mic.
+    mic = sc.default_microphone()
+    if _is_bluetooth(mic):
+        others = [m for m in sc.all_microphones() if not _is_bluetooth(m)]
+        if others:
+            print(f"Note: default mic '{mic.name}' is a Bluetooth headset; using '{others[0].name}' "
+                  "instead to keep the headset in high-quality mode (choose with --mic).")
+            return others[0]
+    return mic
+
+
 def resolve(spec, loopback):
     """spec is None (use the default), an index from --list-devices, or part of a source name."""
     if spec is None:
-        return _monitor_of_default_output() if loopback else sc.default_microphone()
+        return _monitor_of_default_output() if loopback else _default_microphone()
     sources = all_sources()
     if spec.isdigit():
         return sources[int(spec)]
