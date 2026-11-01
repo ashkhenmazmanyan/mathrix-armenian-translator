@@ -10,7 +10,7 @@ import numpy as np
 import torch
 
 from . import devices
-from .asr import Transcriber, has_armenian
+from .asr import Transcriber, has_armenian, looks_like_noise
 from .audio import AudioSource
 from .output import print_segment
 from .speakers import SpeakerLabeler
@@ -73,7 +73,7 @@ class Worker(threading.Thread):
             with open(os.path.join(self.debug_dir, "log.txt"), "a", encoding="utf-8") as f:
                 f.write(f"{self.count:03d} {seg.source} t={t_rel:.1f}s audio={len(audio)/16000:.1f}s "
                         f"HY={hy!r} removed_by_filter={self.asr.last_removed!r}\n")
-        if not hy or not has_armenian(hy):
+        if not hy or not has_armenian(hy) or looks_like_noise(hy):
             self.dropped += 1
             if self.show_latency:
                 print(f"    (dropped {seg.source} segment: {hy!r})\n", flush=True)

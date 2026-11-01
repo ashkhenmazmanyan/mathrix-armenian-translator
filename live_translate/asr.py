@@ -39,3 +39,32 @@ def remove_repeats(text):
         if sentence and (not out or key != re.sub(r"[^\w]", "", out[-1].lower())):
             out.append(sentence)
     return " ".join(out)
+
+
+FILLER = re.compile(r"^(մ+հ?[ու]*մ+|հ?ըմ+)$")   # "մհմ", "մհում", "մմ", "ըմ": listening noises
+
+
+def looks_like_noise(text):
+    """True for text Whisper produces from non-speech or listening noises.
+
+    Seen in a 7-minute call: short phrases (1.2-2.0 s) of laughter/breath came out as
+    "Մենք այդ այդ այդ այդ", "Հայսպես այդ այդ այդ այդ այդ", "Հում հում", laughter as
+    "Հախախախախախախախ", and "մհմ"/"մհում"
+    was translated as "Oh, my God" / "It's a mystery". These lines are dropped (and, because
+    this happens before speaker labelling, they can no longer create fake speakers).
+    Real short answers like "Այո" or "Հա" are kept.
+    """
+    words = [re.sub(r"[^\w]", "", w.lower()) for w in text.split()]
+    words = [w for w in words if w]
+    if not words:
+        return True
+    if len(words) == 1 and FILLER.match(words[0]):
+        return True
+    # laughter: one or two "words" made of a repeated syllable ("Հախախախախախախախ")
+    if len(words) <= 2 and any(re.search(r"(..)\1\1", w) for w in words):
+        return True
+    run = longest = 1
+    for a, b in zip(words, words[1:]):
+        run = run + 1 if a == b else 1
+        longest = max(longest, run)
+    return len(words) <= 6 and (longest >= 3 or (len(words) <= 3 and longest >= 2))
