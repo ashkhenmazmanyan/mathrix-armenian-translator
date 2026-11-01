@@ -1,0 +1,60 @@
+"""Command line: python -m live_translate [options]"""
+import argparse
+import os
+import sys
+
+
+def parse_args():
+    p = argparse.ArgumentParser(
+        prog="python -m live_translate",
+        description="Live Armenian speech -> English translation in the terminal.")
+    p.add_argument("--list-devices", action="store_true", help="list audio sources and exit")
+    p.add_argument("--mic", help="microphone: number from --list-devices or part of its name "
+                                 "(default: the system default microphone)")
+    p.add_argument("--system", help="system-audio (monitor) source: number or part of its name "
+                                    "(default: monitor of the default output device)")
+    p.add_argument("--no-mic", action="store_true", help="don't capture the microphone")
+    p.add_argument("--no-system", action="store_true", help="don't capture system audio")
+    p.add_argument("--asr-model", default="large-v3",
+                   help="faster-whisper model (default large-v3; large-v3-turbo is ~3x faster, less accurate)")
+    p.add_argument("--asr-compute-type", default="int8_float16")
+    p.add_argument("--mt-model", default="nllb-600M", choices=["nllb-600M", "nllb-1.3B"])
+    p.add_argument("--min-silence", type=float, default=0.6,
+                   help="seconds of silence that end a phrase (default 0.6)")
+    p.add_argument("--max-segment", type=float, default=10.0,
+                   help="longest phrase in seconds before it is cut (default 10)")
+    p.add_argument("--latency", action="store_true", help="show a latency breakdown under each line")
+    p.add_argument("--download-models", action="store_true",
+                   help="download the selected models (needs internet) and exit")
+    return p.parse_args()
+
+
+def main():
+    args = parse_args()
+    if not args.download_models:
+        # Run fully offline: models must already be in the local cache.
+        os.environ.setdefault("HF_HUB_OFFLINE", "1")
+
+    if args.list_devices:
+        from .devices import print_sources
+        print_sources()
+        return
+    if args.download_models:
+        from faster_whisper import download_model
+        from huggingface_hub import snapshot_download
+        from .translate import MT_MODELS
+        print("ASR:", download_model(args.asr_model))
+        print("MT: ", snapshot_download(MT_MODELS[args.mt_model]))
+        return
+
+    from .pipeline import run
+    run(args)
+    # Exit immediately: letting the interpreter tear down the native GPU/audio libraries
+    # (CTranslate2, PulseAudio) while their threads exist aborted with
+    # "terminate called without an active exception" and hung the terminal.
+    sys.stdout.flush()
+    os._exit(0)
+
+
+if __name__ == "__main__":
+    main()

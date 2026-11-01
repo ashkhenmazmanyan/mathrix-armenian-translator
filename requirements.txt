@@ -5,3 +5,4 @@ soundcard
 faster-whisper
 transformers>=4.45,<5
 sentencepiece
+silero-vad
